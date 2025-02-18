@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ServicesSection from "../../components/ServicesSection";
 import UrbenFoundationSection from "../../components/UrbenFoundationSection";
+import UrgenPlaningIMage from "../../assets/img/urban-planning.png";
 
 function Qualitives() {
   return (
@@ -18,7 +19,7 @@ function Qualitives() {
 
           <div className=" text p-0 m-0 ">
             <img
-              src="/src/assets/img/urban-planning.png"
+              src={UrgenPlaningIMage}
               alt=''
               className=" md:w-[30rem] mx-auto md:mx-0  w-[20rem]    animate-float animation-delay-2000"
             />
