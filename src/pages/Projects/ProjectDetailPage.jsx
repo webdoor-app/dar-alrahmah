@@ -7,6 +7,11 @@ import Footer from "../../components/Footer";
 import { projects } from "../../components/MasonaryGrid"; // Adjust the import path as needed
 import { img } from "framer-motion/client";
 
+import ProjectSubHeader1 from "../../assets/img/ProjectSubHeader1.svg";
+import ProjectHeaderP1 from "../../assets/img/ProjectHeaderP1.svg";
+import ProjectHeaderP2 from "../../assets/img/ProjectHeaderP2.svg";
+
+
 function ProjectDetailPage() {
   // Get the projectId from the URL
   const { projectId } = useParams();
@@ -49,8 +54,8 @@ function ProjectDetailPage() {
         {/* Right Side with ServicesHeader2 */}
         <div className="w-1/4 md:w-64 mt-4">
           <img
-            src="/src/assets/img/ProjectSubHeader1.svg"
-            alt="Services Header 2"
+            src={ProjectSubHeader1}
+            alt="Projects Header 2"
           />
         </div>
       </div>
@@ -117,8 +122,8 @@ function ProjectDetailPage() {
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="md:w-[30%]    w-1/3 mt-4 relative">
           <img
-            src="/src/assets/img/ProjectHeaderP1.svg"
-            alt="Services Header 1"
+            src={ProjectHeaderP1}
+            alt="Projects Header 1"
             className="hidden md:flex"
           />
           {/* Absolute positioned h2 */}
@@ -130,8 +135,8 @@ function ProjectDetailPage() {
         {/* Right Side with ServicesHeader2 */}
         <div className="md:w w-1/3   mt-4">
           <img
-            src="/src/assets/img/ProjectHeaderP2.svg"
-            alt="Services Header 2"
+            src={ProjectHeaderP2}
+            alt="Projects Header 2"
           />
         </div>
       </div>

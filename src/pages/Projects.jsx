@@ -2,6 +2,11 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MasonaryGrid from "../components/MasonaryGrid";
+import ProjectHeaderP1 from "../assets/img/ProjectHeaderP1.svg";
+import ProjectHeaderP2 from "../assets/img/ProjectHeaderP2.svg";
+import ProjectFooter1 from "../assets/img/ProjectFooter1.svg";
+import ProjectFooter2 from "../assets/img/ProjectFooter2.svg";
+
 
 function Projects() {
   return (
@@ -14,8 +19,8 @@ function Projects() {
             {/* Left Side with ServicesHeader1 and h2 */}
             <div className="md:w-[30%] mt-4 relative">
               <img
-                src="/src/assets/img/ProjectHeaderP1.svg"
-                alt="Services Header 1"
+                src={ProjectHeaderP1}
+                alt="Projects Header 1"
                 className="hidden md:flex"
               />
               {/* Absolute positioned h2 */}
@@ -27,8 +32,8 @@ function Projects() {
             {/* Right Side with ServicesHeader2 */}
             <div className="w-1/2 md:w-1/3 mt-4 mr-auto md:mr-0">
               <img
-                src="/src/assets/img/ProjectHeaderP2.svg"
-                alt="Services Header 2"
+                src={ProjectHeaderP2}
+                alt="Projects Header 2"
               />
             </div>
           </div>
@@ -49,8 +54,8 @@ function Projects() {
           {/* Right Side with ServicesFooter2 */}
           <div className="w-1/3 md:w-auto md:flex-1 md:flex md:justify-start mb-8 pt-8">
             <img
-              src="/src/assets/img/ProjectFooter1.svg"
-              alt="Services Header 2"
+              src={ProjectFooter1}
+              alt="Projects Header 2"
               className="md:max-w-none md:w-64"
             />
           </div>
@@ -58,8 +63,8 @@ function Projects() {
           {/* Left Side with ServicesFooter1 and h2 */}
           <div className="w-1/3 md:w-auto md:flex-1 md:flex md:justify-end mt-8 md:mt-0">
             <img
-              src="/src/assets/img/ProjectFooter2.svg"
-              alt="Services Header 1"
+              src={ProjectFooter2}
+              alt="Projects Header 1"
               className="md:max-w-none md:w-64"
             />
           </div>
