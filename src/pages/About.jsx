@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SlideCards from "../components/SlideCards";
+import AboutFooter1 from "../assets/img/AboutFooter1.svg";
+import AboutFooter2 from "../assets/img/AboutFooter2.svg";
 
 function About() {
 
@@ -18,15 +20,15 @@ function About() {
           {/* Right Side with ServicesFooter2 */}
           <div className="w-  mb-">
             <img
-                    src="/src/assets/img/AboutFooter1.svg"
-                    alt="Services Header 2"
+                    src={AboutFooter1}
+                    alt="About Footer 2"
                   />
           </div>
           {/* Left Side with ServicesFooter1 and h2 */}
           <div className="w my-8 ">
             <img
-              src="/src/assets/img/AboutFooter2.svg"
-              alt="Services Header 1"
+              src={AboutFooter2}
+              alt="About Footer 1"
             />
           </div>
         </div>

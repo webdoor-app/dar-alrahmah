@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ContactHeader1 from "../assets/img/ContactHeader1.svg";
+import ContactFooter1 from "../assets/img/ContactFooter1.svg";
 
 function Contact() {
   return (
@@ -13,8 +15,8 @@ function Contact() {
           {/* Left Side with ServicesHeader1 and h2 */}
           <div className="w-1/2 md:w-full my-4 relative">
             <img
-              src="/src/assets/img/ContactHeader1.svg"
-              alt="Services Header 1"
+              src={ContactHeader1}
+              alt="Contact Header 1"
             />
             {/* Absolute  h2 */}
             {/* <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-6xl font-bold text-tertiary mb-6">
@@ -94,8 +96,8 @@ function Contact() {
           {/* Left Side with ServicesFooter1 and h2 */}
           <div className="w my-8 ">
             <img
-              src="/src/assets/img/ContactFooter1.svg"
-              alt="Services Header 1"
+              src={ContactFooter1}
+              alt="Contact Footer 1"
             />
           </div>
         </div>
