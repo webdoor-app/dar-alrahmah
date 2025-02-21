@@ -197,11 +197,7 @@ function ServicesSection() {
       <div className="flex mt-5 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w-1/3 md:mt-6 relative">
-          <img
-            src={servicesHeader1}
-            alt="Services Header 1"
-            loading="lazy"
-          />
+          <img src={servicesHeader1} alt="Services Header 1" loading="lazy" />
           {/* Absolute positioned h2 */}
           <h1 className="absolute  top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-5xl font-bold text-tertiary mb-6">
             خدماتنـــا
@@ -210,11 +206,7 @@ function ServicesSection() {
 
         {/* Right Side with ServicesHeader2 */}
         <div className="w-1/3">
-          <img
-            src={servicesHeader2}
-            alt="Services Header 2"
-            loading="lazy"
-          />
+          <img src={servicesHeader2} alt="Services Header 2" loading="lazy" />
         </div>
       </div>
 
@@ -285,91 +277,76 @@ function ServicesSection() {
           </div>
         </div>
 
-      {/* Main Content Area */}
-<div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:mt-0 gap-8 md:gap-12">
-  <h3 className="md:text-5xl text-2xl font-bold text-[#9A6A38]">
-    {serviceData[activeTab].title}
-  </h3>
-  <p
-    className={`text-justify my- mb- w-full md:text-base text-sm font-semibold ${
-      isLastTabSelected ? "text-accent" : "text-gray-600"
-    }`}
-  >
-    {serviceData[activeTab].description}
-  </p>
+        {/* Main Content Area */}
+        <div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:mt-0 gap-8 md:gap-12">
+          <h3 className="md:text-5xl text-2xl font-bold text-[#9A6A38]">
+            {serviceData[activeTab].title}
+          </h3>
+          <p
+            className={`text-justify my- mb- w-full md:text-base text-sm font-semibold ${
+              isLastTabSelected ? "text-accent" : "text-gray-600"
+            }`}
+          >
+            {serviceData[activeTab].description}
+          </p>
 
-  {/* Sub-services */}
-  <div className="w-full md:w-full flex items-start flex-col md:flex-row md:items-end md:justify-start gap-4 my-1">
-    {serviceData[activeTab].subServices.map((service, index) => (
-      <div
-        key={index}
-        onMouseEnter={() => setHoveredSubService(index)}
-        onMouseLeave={() => setHoveredSubService(null)}
-        className={`relative group shadow-md p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
-          isLastTabSelected
-            ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
-            : "bg-white"
-        }`}
-        style={{
-          borderRight: isLastTabSelected
-            ? "2px solid rgba(184, 132, 68, 0.45)"
-            : "none",
-          borderTop: isLastTabSelected
-            ? "2px solid rgba(184, 132, 68, 0.45)"
-            : "none",
-          borderBottom: isLastTabSelected ? "none" : "none",
-        }}
-      >
-        <img
-          src={service.icon}
-          alt={service.title}
-          className="size-10 md:size-14"
-          loading="lazy"
-        />
-        {/* Fix for service.title overflow */}
-        <p className="text-base md:text-lg font-medium whitespace-normal break-words min-w-0 w-full">
-          {service.title}
-        </p>
-      </div>
-    ))}
-  </div>
+          {/* Sub-services */}
+          <div className="md:itmen w-full md:w-full flex items-start flex-col md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
+            {serviceData[activeTab].subServices.map((service, index) => (
+              <div
+                key={index}
+                onMouseEnter={() => setHoveredSubService(index)}
+                onMouseLeave={() => setHoveredSubService(null)}
+                className={`relative group shadow-md p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 
+          ${
+            isLastTabSelected
+              ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
+              : "bg-white"
+          }`}
+                style={{
+                  borderRight: isLastTabSelected
+                    ? "2px solid rgba(184, 132, 68, 0.45)"
+                    : "none", // Bottom-left border with 25% opacity
+                  borderTop: isLastTabSelected
+                    ? "2px solid rgba(184, 132, 68,  0.45 )"
+                    : "none", // Bottom-left border with 25% opacity
+                  borderBottom: isLastTabSelected ? "none" : "none", // Bottom-left border none
+                }}
+              >
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="size-10 md:size-14"
+                  loading="lazy"
+                />
+                {/* Fix for service.title overflow */}
+                <p className="text-base md:text-lg font-medium whitespace-normal break-words min-w-0 w-full">
+                  {service.title}
+                </p>
 
-  {/* Sub-sub-services Dropdown */}
-  {hoveredSubService !== null && (
-    <div
-      className="absolute  top-[212%] md:top-[165%] text-center  z-10 min-w-max"
-      style={{
-        top: `${
-          document
-            .querySelector(`.sub-service-card-${hoveredSubService}`)
-            ?.getBoundingClientRect().bottom + window.scrollY + 10
-        }px`, // Position below the hovered card
-        left: `${
-          document
-            .querySelector(`.sub-service-card-${hoveredSubService}`)
-            ?.getBoundingClientRect().left
-        }px`, // Align with the hovered card
-      }}
-    >
-      <div className="mt- bg- p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg   border-gray-200">
-        {serviceData[activeTab].subServices[hoveredSubService].subSubServices?.map(
-          (subSub, subIndex) => (
-            <div
-              key={subIndex}
-              className={`p-4 md:p-6 w-40 md:w-48 text-wrap text-xs md:text-base text-gray-700 rounded-xl shadow-md  border-gray-200 transition-colors cursor-pointer hover:bg-gray-100 whitespace-normal ${
-                isLastTabSelected
-                  ? "bg-gradient-primary text-white border-none"
-                  : "bg-white"
-              }`}
-            >
-              {subSub}
-            </div>
-          )
-        )}
-      </div>
-    </div>
-  )}
-</div>
+                {/* Sub-sub-services Dropdown */}
+                {hoveredSubService === index && (
+                  <div className="absolute top-full sm:mx-auto md:mx-0 md:-right-4 transform translate-y-2 z-10 min-w-max">
+                    <div className="mt-2  bg- pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg ">
+                      {service.subSubServices?.map((subSub, subIndex) => (
+                        <div
+                          key={subIndex}
+                          className={`p-4 md:p-6 w-40 md:w-48 text-wrap text-xs md:text-base text-gray-700 rounded-xl shadow-md border border-gray-200 transition-colors cursor-pointer hover:bg-gray-100 whitespace-normal ${
+                            isLastTabSelected
+                              ? "bg-gradient-primary text-white border-none"
+                              : "bg-white"
+                          }`}
+                        >
+                          {subSub}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Section Footer */}
@@ -385,11 +362,7 @@ function ServicesSection() {
         </div>
         {/* Left Side with ServicesFooter1 and h2 */}
         <div className="w-1/3 md:w- mt-4   flex justify-end">
-          <img
-            src={servicesFooter1}
-            alt="Services Header 1"
-            loading="lazy"
-          />
+          <img src={servicesFooter1} alt="Services Header 1" loading="lazy" />
         </div>
       </div>
     </section>
