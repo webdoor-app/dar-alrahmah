@@ -46,7 +46,7 @@ function Header() {
                   <NavLink
                     to="/"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary"
+                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
                     }
                   >
                     الرئيسية
@@ -60,17 +60,17 @@ function Header() {
                   <NavLink
                     to="/fields/UrbanPlanning"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary"
+                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
                     }
                   >
                     مجالاتنـا
                   </NavLink>
                   {isDropdownOpen && (
-                    <div className="absolute right-0 mt-0 w-48 bg-white rounded-l-lg rounded-b-lg shadow-lg">
+                    <div className="absolute right-0 mt-1 w-52 bg-accent inset-  rounded-l-2xl rounded-b-2xl   shadow-[0_0_10px_rgba(0,0,0,0.1)]">
                       <div className="py-2 px-3 divide-y">
                         <NavLink
                           to="/fields/UrbanPlanning"
-                          className="block px- py-2 text-sm text-tertiary hover:bg-gray-100"
+                          className="block px- py-2 text[18px] font-bold text-secondary hover:text-primary"
                         >
                           <div className="flex justify-start gap-2">
                             <img src={urbenIcon} alt="icon" />
@@ -79,7 +79,7 @@ function Header() {
                         </NavLink>
                         <NavLink
                           to="/fields/Qualitives"
-                          className="block px- py-2 text-sm text-tertiary hover:bg-gray-100"
+                          className="block px- py-2 text[18px] font-bold text-secondary hover:text-primary"
                         >
                           <div className="flex justify-start gap-2">
                             <img src={quanitiveIcon} alt="icon" />
@@ -88,7 +88,7 @@ function Header() {
                         </NavLink>
                         <NavLink
                           to="/fields/DevlopmentDesign"
-                          className="block px- py-2 text-sm text-tertiary hover:bg-gray-100"
+                          className="block px- py-2 text[18px] font-bold text-secondary hover:text-primary"
                         >
                           <div className="flex justify-start gap-2">
                             <img src={urbenDesignIcon} alt="icon" />
@@ -97,7 +97,7 @@ function Header() {
                         </NavLink>
                         <NavLink
                           to="/fields/EngineeringManagement"
-                          className="block px- py-2 text-sm text-tertiary hover:bg-gray-100"
+                          className="block px- py-2 text[18px] font-bold text-secondary hover:text-primary"
                         >
                           <div className="flex justify-start gap-2">
                             <img src={engManagementIcon} alt="icon" />
@@ -112,7 +112,7 @@ function Header() {
                   <NavLink
                     to="/projects"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary"
+                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
                     }
                   >
                     أعمالنـا
@@ -124,7 +124,7 @@ function Header() {
                     className={({ isActive }) =>
                       isActive
                         ? "text-secondary font-bold text-nowrap"
-                        : "text-primary text-nowrap"
+                        : "text-primary hover:text-secondary text-nowrap"
                     }
                   >
                     من نحن
@@ -137,7 +137,7 @@ function Header() {
                 className={({ isActive }) =>
                   isActive
                     ? "bg-secondary text-accent font-bold md:mr-5 xl:mr-20 rounded-md py-1 px-4"
-                    : "bg-primary text-accent mr-20 rounded-md py-1 md:mr-5 xl:mr-20 px-4"
+                    : "bg-primary hover:bg-secondary text-accent mr-20 rounded-md py-1 md:mr-5 xl:mr-20 px-4"
                 }
               >
                 <button className="text-nowrap flex items-center justify-center">
