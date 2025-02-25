@@ -14,8 +14,8 @@ function AutoPlayLogoCarousel() {
   return (
     <div className="bg-accent py-12 font-camel">
       {/* Header */}
-      <div className="text-center mb-8">
-        <h2 className="text-xl md:text-3xl font-extrabold text-tertiary">شراكــــــات مـثـمـــرة و أكــثــــر !</h2>
+      <div className="text-center  mb-8 md:my- md:mb-20 md:mt-10">
+        <h2 className="text-xl md:text-[47.12px] font-extrabold text-tertiary">شراكــــــات مـثـمـــرة و أكــثــــر !</h2>
         {/* <p className="text-gray-600 mt-2">نحن فخورون بالتعاون مع أفضل العلامات التجارية</p> */}
       </div>
 
@@ -29,7 +29,7 @@ function AutoPlayLogoCarousel() {
               <img 
                 src={logo} 
                 alt={`Partner Logo ${index + 1}`} 
-                className="h-8 md:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                className="h-8 md:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity"
                 loading="lazy"
               />
             </div>
