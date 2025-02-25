@@ -5,6 +5,8 @@ import ServicesSection from "../../components/ServicesSection";
 import UrbenFoundationSection from "../../components/UrbenFoundationSection";
 import mobileFrame from "../../assets/img/mobileFrame.svg";
 import urbanPlanningEffect from "../../assets/img/Urben-Ellipse.svg";
+import UrgenPlaningIMage from "../../assets/img/urban-planning.png";
+
 
 function EngineeringManagement() {
   return (
@@ -25,7 +27,7 @@ function EngineeringManagement() {
 
           <div className="  text-center  mt-6 md:mt-0 p-0 m-0">
             <img
-              src="/src/assets/img/urban-planning.png"
+              src={UrgenPlaningIMage}
               alt=""
               className="md:w-[30rem] mx-auto md:mx-0  w-[10rem] animate-float animation-delay-2000"
             />
