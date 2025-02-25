@@ -1,0 +1,31 @@
+name: Build & Deploy 
+on: 
+  push: [master]
+jobs:
+  build:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+
+      - name: Node install 
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 🛠 Install dependencies
+        run:  |
+          npm install 
+          npm run build 
+          ls 
+
+      # - name: copy file via ssh password
+      #   uses: appleboy/scp-action@v0.1.7
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     source: "tests/a.txt,tests/b.txt"
+      #     target: your_server_target_folder_path
