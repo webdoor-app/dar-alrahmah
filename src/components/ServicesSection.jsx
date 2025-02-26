@@ -196,10 +196,10 @@ function ServicesSection() {
       {/* Section Header */}
       <div className="flex mt-5 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
-        <div className="w-1/3 md:mt-6 relative">
+        <div className="w-[30%] md: lg:w-fit md:mt-6 relative">
           <img src={servicesHeader1} alt="Services Header 1" loading="lazy" />
           {/* Absolute positioned h2 */}
-          <h1 className="absolute  top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-5xl font-bold text-tertiary mb-6">
+          <h1 className="absolute  top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2  text-lg md:text-3xl lg:text-[76.24px] font-bold text-tertiary mb-6">
             خدماتنـــا
           </h1>
         </div>
@@ -350,9 +350,9 @@ function ServicesSection() {
       </div>
 
       {/* Section Footer */}
-      <div className="flex justify-between mt-12 mb-5 md:mb-12 ">
+      <div className="flex justify-between mt-12 md:mt-0 mb-5 md:mb-12 ">
         {/* Right Side with ServicesFooter2 */}
-        <div className="md:w-1/3  w-24 m-base-m b-20">
+        <div className="md:w-1/3  md:  w-24 m-base-m b-20">
           <img
             src={servicesFooter2}
             alt="Services Header 2"
@@ -361,7 +361,7 @@ function ServicesSection() {
           />
         </div>
         {/* Left Side with ServicesFooter1 and h2 */}
-        <div className="w-1/3 md:w- mt-4   flex justify-end">
+        <div className="w-1/3 md:w- mt-4 md:mt-20   flex justify-end">
           <img src={servicesFooter1} alt="Services Header 1" loading="lazy" />
         </div>
       </div>
