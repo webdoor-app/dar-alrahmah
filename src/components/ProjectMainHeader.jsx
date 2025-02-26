@@ -59,15 +59,15 @@ export class ProjectMainHeader extends Component {
           {/* Section Header */}
           <div className="flex pt-5 md:pt-12 justify-between relative">
             {/* Left Side with ServicesHeader1 and h2 */}
-            <div className="w-[30%] mt-4 relative">
+            <div className="w-[30%] md: lg:w-fit  mt-4 relative">
               <img
                 src={projectHeader1}
                 alt="Services Header 1"
                 loading="lazy"
               />
               {/* Absolute h2 */}
-              <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-5xl font-bold text-tertiary mb-6">
-                أعمالنــــــا
+              <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-3xl lg:text-[76.24px] font-bold text-tertiary mb-6">
+              أعمالنــــــا
               </h1>
             </div>
           </div>
@@ -79,7 +79,7 @@ export class ProjectMainHeader extends Component {
               <div className=" flex  items-center justify-">
                 <div className=" card-container   bg-accent rounded-bl-xl md:rounded-bl-3xl">
                   <div className="card-header">
-                    <h1 className="font-extrabold px-8  p-3 md:p-5 md:px-10 text-lg md:text-5xl text-tertiary">
+                    <h1 className="font-extrabold px-8  md:pt-10 p-3 md:p-5 md:px-10 text-lg md:text-[47.12px] text-tertiary">
                       دار الرحمة في أرقام
                     </h1>
                   </div>
@@ -103,34 +103,28 @@ export class ProjectMainHeader extends Component {
 
               {/* bottom */}
               <div className="flex  items- justify-between i px-6 md:px-12 py-8">
-                <div className=" w- ">
-                  <p className="z-10 text-xs md:text-base font-light text-justify">
-                    هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع.
-                    هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع.
-                    هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع.
-                    هذا نص هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم
-                    والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم
-                    والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم
-                    والمشاريع. هذا نص
+                <div className="  md:w-[97%] ">
+                  <p className="z-10 text-xs md:text-[20px]/8 space-y-4 text-gray-600 font-camel md:font-medium font-light text-justify">
+                  هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع. هذا نص تمثيلي يستخدم لتعبئة الفراغات في التصاميم والمشاريع.
                   </p>
                 </div>
-                <div className=" relative w-[80rem] md:w-[50rem] flex  justify-center">
+                <div className="  lg:-top-24  relative w-[80rem] md:w-[50rem] flex  justify-center">
                   <img
                     src={dimond}
                     alt="icon"
-                    className=" z-10"
+                    className="md:absolute lg:w-96 z-10"
                     loading="lazy"
                   />
 
                   {/* Total Project */}
-                  <div className=" absolute top-14  z-20 font-sans font-extrabold text-2xl md:text-6xl  ">
+                  <div className=" absolute top-14  z-20 font-sans font-extrabold text-2xl md:text-6xl md:font-extrabold  ">
                     <div className={isSlidingOut ? "slide-out" : "slide-up"}>
                       {totalProjects[currentIndex]}
                     </div>
                   </div>
 
                   {/* Beneficiaries */}
-                  <div className=" absolute top-24 md:top-32 right-[33%] font-bold text-gray-700  text-xs md:text-xl  z-10  h-">
+                  <div className=" absolute top-24 md:top-32 right-[33%] font-bold text-gray-500  text-xs md:text-xl  z-10  h-">
                     <div
                       className={
                         isSlidingOut ? "slide-out" : "slide-up-delayed"
