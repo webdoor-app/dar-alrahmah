@@ -41,7 +41,7 @@ function Projects() {
 
         {/* Masonary Grid */}
 
-        <div className="md:m-base-m  text-center">
+        <div className="md:m-base-m py-8 mx-4  text-center">
           <MasonaryGrid
             // selectedProjectIds={}
             // limit={10}

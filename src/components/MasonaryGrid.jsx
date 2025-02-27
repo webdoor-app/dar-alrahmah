@@ -349,52 +349,41 @@ function MasonaryGrid({
   };
 
   return (
-    <div className="columns-2 sm:columns-2 md:columns-3 pt-10  px-4 md:px-[4rem] bg-accent gap-4 w-full mx-auto font-camel hover:cursor-pointer">
-      {displayedProjects.map((project, index) => (
-        <div
-          key={project.id}
-          className={`relative break-inside-avoid group mb-4  rounded-xl overflow-hidden  border-yellow- ${
-            showMoreButton && index === displayedProjects.length - 1 ? "relative rounded-bl-none" : ""
-          }`}
-          onClick={() => handleProjectClick(project.id)}
-        >
-          <div
-            className={`relative ${
-              isProjectPage ? "cursor-pointer hover:scale-105 transition-transform" : ""
-            }`}
-          >
+    <div className="masonry-grid">
+    {displayedProjects.map((project, index) => (
+      <div
+        key={project.id}
+        className={`masonry-item relative group mb-4 rounded-2xl h-fit font-camel overflow-hidden border-yellow- ${
+          showMoreButton && index === displayedProjects.length - 1
+            ? "rounded-bl-none"
+            : ""
+        }`}
+        onClick={() => handleProjectClick(project.id)}
+      >
+        <div className="card-content">
+          <div className="relative">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-64 sm:h-80 object-cover"
-              loading=""
+              className="w-full h-auto object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 rounded- bg-black/30 transition-opacity duration-300 group-hover:bg-black/40" />
-            <div className="absolute inset-0 p-4 sm:p-6 flex flex-col rounded- justify-between text-white">
-              <div className="text-right">
-                <h1 className="text-2xl sm:text- md:text-4xl font-bold mb-2">
+            <div className="absolute inset-0 p-2 md:px-5 sm:p- flex flex-col rounded- justify-between text-white">
+              <div className="text-content text-right">
+                <h1 className="text-sm sm:text-lg md:text-xl xl:text-[47.12px] md:leading-[60px] h-fit md:mt- text-wrap font-bold mb-1">
                   {project.title}
                 </h1>
-                <p className="text-sm sm:text-base opacity-90 line-clamp-2 mb-4">
+                <p className="text-xs sm:text-base opacity-90  line-clamp-2 md:mb-2">
                   {project.description}
                 </p>
-                <p className="text-sm sm:text-base">{project.date}</p>
+                <p className="text-xs sm:text-base">{project.date}</p>
               </div>
-              <div
-                className={`flex flex-wrap gap-2 justify-start ${
-                  showMoreButton && index === displayedProjects.length - 1
-                    ? "mb-20 md:mb-0"
-                    : "w-"
-                }`}
-              >
+              <div className="categories flex flex-wrap gap-2 mt-auto justify-start">
                 {project.categories.map((category, catIndex) => (
                   <button
                     key={catIndex}
-                    className={`px-2 py-1 text-xs text-wrap sm:text-sm bg-transparent md:text-nowrap border border-accent rounded-lg hover:bg-[#6a4a2d] transition-all backdrop-blur-sm ${
-                      showMoreButton && index === displayedProjects.length - 1
-                        ? "w-"
-                        : ""
-                    }`}
+                    className="md:px-2 md:py-1 px-1 text-[10px] text-wrap sm:text-sm md:text-base bg-transparent md:text-nowrap border border-accent rounded-md md:rounded-lg hover:bg-[#6a4a2d] transition-all backdrop-blur-sm"
                   >
                     {category}
                   </button>
@@ -402,25 +391,28 @@ function MasonaryGrid({
               </div>
             </div>
           </div>
-          {showMoreButton && index === displayedProjects.length - 1 && (
-            <div className=" reletive  inset-0 flex rounded-bl-none  items-end justify-end ">
-              <div className='btn-header'>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleSeeMore();
-                  }}
-                  className=" px-8 py- sm:px-6 sm:py-3 bg-accent   absolute left-0 bottom-0 flex items- pt-3 justify-center gap- 1 text-black h-20 sm:h-28 w-20 sm:w-36 md:w-44 lg:w-48 rounded-tr-xl rounded-bl-none   transition-all font-semibold"
-                >
-                  <img src={more} alt="" className="w-8  sm:w-12" />
-                  <span className="md:text-3xl text-lg  text-wrap ">تصفح المزيد</span>
-                </button>
-              </div>
-            </div>
-          )}
         </div>
-      ))}
-    </div>
+        {showMoreButton && index === displayedProjects.length - 1 && (
+          <div className="relative inset-0 flex rounded-bl-none items-end justify-end">
+            <div className="btn-header">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleSeeMore();
+                }}
+                className="px-8 py- sm:px-6 sm:py-3 bg-accent absolute left-0 bottom-0 flex items- pt-3 md:pt-4 justify-center items-start gap-1 text-black h-auto sm:h-28 w-20 sm:w-36 md:w-36 lg:w-40 xl:w-48 md:rounded-tr-[2rem] rounded-2xl rounded-bl-none transition-all font-semibold"
+              >
+                <img src={more} alt="" className="w-8 sm:w-10 z-50" />
+                <span className="md:text-xl lg:text-2xl text-primary text-sm text-wrap">
+                  تصفــــــح المزيــــد
+                </span>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
   );
 }
 
