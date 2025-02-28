@@ -210,9 +210,9 @@ function ServicesSection() {
         </div>
       </div>
 
-      <div className="py-8 px-8  md:m-base-m flex md:items-center  flex-col lg:flex-row gap-">
+      <div className="py-8 px-8  md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
         {/* Sidebar Tabs */}
-        <aside className="order-1 flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-32 md:pt-0 relative">
+        <aside className="order-1 flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-32 md:pt-0 relative  md:ml-">
           {/* Line (SVG) */}
           <img
             src={line}
@@ -260,7 +260,7 @@ function ServicesSection() {
         </aside>
 
         {/* Main Image */}
-        <div className="order-2  lg:order-3 w-full lg:w-[50%] grid place-items-center">
+        <div className="order-2  lg:order-3 w-full lg:w-[50%] grid place-items-center ">
           <div className="relative">
             <img
               src={serviceData[activeTab].image}
@@ -278,8 +278,8 @@ function ServicesSection() {
         </div>
 
         {/* Main Content Area */}
-        <div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:mt-0 gap-8 md:gap-12">
-          <h3 className="md:text-5xl text-2xl font-bold text-[#9A6A38]">
+        <div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:pt-0 md:mt-0 gap-8 md:gap-12   ">
+          <h3 className="md:text-[47.12px] text-2xl  md:mt-0 font-bold text-tertiary">
             {serviceData[activeTab].title}
           </h3>
           <p
@@ -291,24 +291,23 @@ function ServicesSection() {
           </p>
 
           {/* Sub-services */}
-          <div className="md:itmen w-full md:w-full flex items-start flex-col md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
+          <div className="md:itmen w-full md:w-full flex items-start flex-col text-primary md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
             {serviceData[activeTab].subServices.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setHoveredSubService(index)}
                 onMouseLeave={() => setHoveredSubService(null)}
-                className={`relative group shadow-md p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 
-          ${
-            isLastTabSelected
-              ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
-              : "bg-white"
-          }`}
+                className={`relative group shadow-md p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
+                  isLastTabSelected
+                    ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
+                    : "bg-white"
+                }`}
                 style={{
                   borderRight: isLastTabSelected
                     ? "2px solid rgba(184, 132, 68, 0.45)"
                     : "none", // Bottom-left border with 25% opacity
                   borderTop: isLastTabSelected
-                    ? "2px solid rgba(184, 132, 68,  0.45 )"
+                    ? "2px solid rgba(184, 132, 68, 0.45)"
                     : "none", // Bottom-left border with 25% opacity
                   borderBottom: isLastTabSelected ? "none" : "none", // Bottom-left border none
                 }}
@@ -327,15 +326,19 @@ function ServicesSection() {
                 {/* Sub-sub-services Dropdown */}
                 {hoveredSubService === index && (
                   <div className="absolute top-full sm:mx-auto md:mx-0 md:-right-4 transform translate-y-2 z-10 min-w-max">
-                    <div className="mt-2  bg- pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg ">
+                    <div className="mt-2 bg- pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg">
                       {service.subSubServices?.map((subSub, subIndex) => (
                         <div
                           key={subIndex}
-                          className={`p-4 md:p-6 w-40 md:w-48 text-wrap text-xs md:text-base text-gray-700 rounded-xl shadow-md border border-gray-200 transition-colors cursor-pointer hover:bg-gray-100 whitespace-normal ${
+                          className={`p-4 md:p-6 w-40 md:w-48 text-wrap text-xs md:text-base rounded-xl shadow-md border border-gray-200 transition-colors cursor-pointer hover:bg-gray-100 whitespace-normal ${
                             isLastTabSelected
                               ? "bg-gradient-primary text-white border-none"
                               : "bg-white"
-                          }`}
+                          } ${
+                            subIndex % 2 === 0
+                              ? "text-primary"
+                              : "text-tertiary"
+                          }`} // Conditionally apply text color
                         >
                           {subSub}
                         </div>
