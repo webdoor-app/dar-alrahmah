@@ -337,7 +337,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           <div className="hidden md:flex">
             <MasonaryGrid
               selectedProjectIds={[8, 7, 4]}
-              isProjectPage={false}
+              isProjectPage={true}
               limit={3}
               showMoreButton
             />
@@ -346,7 +346,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           <div className="flex md:hidden">
             <MasonaryGrid
               selectedProjectIds={[8, 7, 4, 3]}
-              isProjectPage={false}
+              isProjectPage={true}
               limit={4}
               showMoreButton
             />

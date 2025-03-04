@@ -353,7 +353,7 @@ function MasonaryGrid({
     {displayedProjects.map((project, index) => (
       <div
         key={project.id}
-        className={`masonry-item relative group mb-4 rounded-2xl h-fit font-camel overflow-hidden border-yellow- ${
+        className={`masonry-item cursor-pointer relative group mb-4 rounded-2xl h-fit font-camel overflow-hidden border-yellow- ${
           showMoreButton && index === displayedProjects.length - 1
             ? "rounded-bl-none"
             : ""

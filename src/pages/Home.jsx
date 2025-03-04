@@ -192,7 +192,7 @@ function Home() {
 
         {/* Gallery */}
         <div className="px- bg-accent px-4 md:px-[4rem] -20">
-          <MasonaryGrid limit={8} isProjectPage={false} showMoreButton />
+          <MasonaryGrid limit={8} isProjectPage={true} showMoreButton />
         </div>
 
         {/* Logo Carousel Section */}
