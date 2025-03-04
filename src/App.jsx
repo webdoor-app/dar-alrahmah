@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Fields from "./pages/Fields";
@@ -9,10 +10,35 @@ import ProjectDetailPage from "./pages/Projects/ProjectDetailPage";
 import Qualitives from "./pages/Fields/Qualitives";
 import DevlopmentDesign from "./pages/Fields/DevlopmentDesign";
 import EngineeringManagement from "./pages/Fields/EngineeringManagement";
+import loaderGif from "./assets/img/loading1.gif"; 
 
 import "./App.css";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Hide loader after 3 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer); // Cleanup function
+  }, []);
+
+  if (loading) {
+    return (
+      // Loader
+      <div className="md:w-full h-screen my-auto flex justify-center items-center bg-[#FCFCFE] ">
+        <img
+          src={loaderGif}
+          alt="Loading..."
+          className=""
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="h-screen bg-accent">
       <Router>
@@ -24,12 +50,9 @@ function App() {
           <Route path="/fields/Qualitives" element={<Qualitives />} />
           <Route path="/fields/DevlopmentDesign" element={<DevlopmentDesign />} />
           <Route path="/fields/EngineeringManagement" element={<EngineeringManagement />} />
-          {/* <Route path="/fields/finance" element={<FinancePage />} /> */}
 
-
-          {/*  */}
           <Route path="/projects" element={<Projects />} />
-          // Project Detail Page
+          {/* Project Detail Page */}
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
