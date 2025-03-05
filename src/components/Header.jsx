@@ -9,6 +9,7 @@ import quanitiveIcon from "../assets/img/quanitive-icon.svg";
 import urbenDesignIcon from "../assets/img/urben-design-icon.svg";
 import engManagementIcon from "../assets/img/eng-management-icon.svg";
 import arrowIconMobileMenu from "../assets/img/ArrowIconMobileMenu.svg";
+import ArrowIconMobileMenuBrown from "../assets/img/ArrowIconMobileMenuBrown.svg";
 import arrowIconWhite from "../assets/img/ArrowIconWhite.svg";
 
 function Header() {
@@ -46,7 +47,9 @@ function Header() {
                   <NavLink
                     to="/"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
+                      isActive
+                        ? "text-secondary font-bold"
+                        : "text-primary hover:text-secondary"
                     }
                   >
                     الرئيسية
@@ -60,7 +63,9 @@ function Header() {
                   <NavLink
                     to="/fields/UrbanPlanning"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
+                      isActive
+                        ? "text-secondary font-bold"
+                        : "text-primary hover:text-secondary"
                     }
                   >
                     مجالاتنـا
@@ -112,7 +117,9 @@ function Header() {
                   <NavLink
                     to="/projects"
                     className={({ isActive }) =>
-                      isActive ? "text-secondary font-bold" : "text-primary hover:text-secondary"
+                      isActive
+                        ? "text-secondary font-bold"
+                        : "text-primary hover:text-secondary"
                     }
                   >
                     أعمالنـا
@@ -157,10 +164,10 @@ function Header() {
 
               {/* Menu container */}
               <div className="md:hidden top-0 pt-20 absolute h-[101%] font-camel shadow-md font w-[60%] bg-accent flex flex-col justify-between z-40">
-                <div className="px-4 py-6 flex flex-col gap-6">
+                <div className=" py-6 flex flex-col gap-6">
                   <ul className="flex flex-col items-start gap-6 text-primary font-bold">
                     {/* Home */}
-                    <li className="flex items-center justify-between w-full">
+                    <li className="px-4 flex items-center justify-between w-full">
                       <NavLink
                         to="/"
                         onClick={() => setIsOpen(false)}
@@ -168,15 +175,15 @@ function Header() {
                           isActive ? "text-secondary" : "text-primary"
                         }
                       >
-                        الرئيسية
+                        الـرئيــسيــــة
                       </NavLink>
                       <img src={arrowIconMobileMenu} alt="Arrow Icon" />
                     </li>
 
                     {/* مجالاتنـا with Dropdown */}
-                    <li className="w-full">
+                    <li className=" w-full ">
                       <div
-                        className="flex justify-between items-center w-full cursor-pointer"
+                        className="px-4 flex justify-between items-center w-full cursor-pointer "
                         onClick={() =>
                           setIsMobileDropdownOpen(!isMobileDropdownOpen)
                         }
@@ -184,31 +191,39 @@ function Header() {
                         <NavLink
                           to="/fields/UrbanPlanning"
                           className={({ isActive }) =>
-                            isActive ? "text-secondary" : "text-primary"
+                            isActive ? "text-secondary " : "text-primary  "
                           }
                         >
-                          مجالاتنـا
+                          مجـــالاتنـــــــــا
                         </NavLink>
                         <img
-                          src={arrowIconMobileMenu}
+                          src={isMobileDropdownOpen? ArrowIconMobileMenuBrown : arrowIconMobileMenu}
                           alt="Arrow Icon"
                           className={`transition-transform duration-300 ${
-                            isMobileDropdownOpen ? "-rotate-90" : ""
+                            isMobileDropdownOpen
+                              ? "-rotate-90 text-secondary "
+                              : ""
                           }`}
                         />
                       </div>
                       {/* Mobile Dropdown Items */}
                       {isMobileDropdownOpen && (
-                        <ul className="mt-4 mb-3 border-b ml-4 space-y-4 text-primary font-thin">
+                        <ul className="px-4 pt-4 mt-2 pb-4 border-t border-b w-full ml-  space-y-6 text-primary font-light">
                           <li>
                             <NavLink
                               to="/fields/UrbanPlanning"
                               onClick={() => setIsOpen(false)}
-                              className="block hover:text-secondary"
+                              className="block  hover:text-secondary"
                             >
-                              <div className="flex justify-start gap-2">
-                                <img src={urbenIcon} alt="icon" />
-                                <div className="">التخطيط الحضاري</div>
+                              <div className="flex justify-between gap-">
+                                <div className="flex justify-start gap-2">
+                                  <img src={urbenIcon} alt="icon" />
+                                  <div className="">التـخطيط الحضـري</div>
+                                </div>
+                                <img
+                                  src={arrowIconMobileMenu}
+                                  alt="Arrow Icon"
+                                />
                               </div>
                             </NavLink>
                           </li>
@@ -218,9 +233,15 @@ function Header() {
                               onClick={() => setIsOpen(false)}
                               className="block hover:text-secondary"
                             >
-                              <div className="flex justify-start gap-2">
-                                <img src={quanitiveIcon} alt="icon" />
-                                <div> الخبرات النوعية</div>
+                              <div className="flex justify-between gap-">
+                                <div className="flex justify-start gap-2">
+                                  <img src={quanitiveIcon} alt="icon" />
+                                  <div> الخبـرات النـوعيـــة</div>
+                                </div>
+                                <img
+                                  src={arrowIconMobileMenu}
+                                  alt="Arrow Icon"
+                                />
                               </div>
                             </NavLink>
                           </li>
@@ -230,9 +251,15 @@ function Header() {
                               onClick={() => setIsOpen(false)}
                               className="block hover:text-secondary"
                             >
-                              <div className="flex justify-start gap-2">
-                                <img src={urbenDesignIcon} alt="icon" />
-                                <div> التصميم العمراني </div>
+                              <div className="flex justify-between gap-">
+                                <div className="flex justify-start gap-2">
+                                  <img src={urbenDesignIcon} alt="icon" />
+                                  <div> التصميم العمــراني </div>
+                                </div>
+                                <img
+                                  src={arrowIconMobileMenu}
+                                  alt="Arrow Icon"
+                                />
                               </div>
                             </NavLink>
                           </li>
@@ -242,9 +269,15 @@ function Header() {
                               onClick={() => setIsOpen(false)}
                               className="block hover:text-secondary"
                             >
-                              <div className="flex justify-start gap-2">
-                                <img src={engManagementIcon} alt="icon" />
-                                <div> الادارة الهندسية </div>
+                              <div className="flex justify-between gap-">
+                                <div className="flex justify-start gap-2">
+                                  <img src={engManagementIcon} alt="icon" />
+                                  <div> الإدارة الهنـدسيـــة </div>
+                                </div>
+                                <img
+                                  src={arrowIconMobileMenu}
+                                  alt="Arrow Icon"
+                                />
                               </div>
                             </NavLink>
                           </li>
@@ -253,7 +286,7 @@ function Header() {
                     </li>
 
                     {/* Projects */}
-                    <li className="flex items-center justify-between w-full">
+                    <li className="px-4 flex items-center justify-between w-full">
                       <NavLink
                         to="/projects"
                         onClick={() => setIsOpen(false)}
@@ -261,13 +294,13 @@ function Header() {
                           isActive ? "text-secondary" : "text-primary"
                         }
                       >
-                        أعمالنـا
+                        أعــمــالـنـــــــا
                       </NavLink>
                       <img src={arrowIconMobileMenu} alt="Arrow Icon" />
                     </li>
 
                     {/* About */}
-                    <li className="flex items-center justify-between w-full">
+                    <li className="px-4 flex items-center justify-between w-full">
                       <NavLink
                         to="/about"
                         onClick={() => setIsOpen(false)}
@@ -275,7 +308,7 @@ function Header() {
                           isActive ? "text-secondary" : "text-primary"
                         }
                       >
-                        من نحن
+                        مــــن نحــــــن
                       </NavLink>
                       <img src={arrowIconMobileMenu} alt="Arrow Icon" />
                     </li>
@@ -290,12 +323,12 @@ function Header() {
                       onClick={() => setIsOpen(false)}
                       className={({ isActive }) =>
                         isActive
-                          ? "bg-secondary text-accent font-bold rounded- py-2 px-4 block text-center"
-                          : "bg-gradient-primary text-accent rounded- py-2 px-4 block text-center"
+                          ? "bg-secondary text-accent font-bold rounded- py-4 px-4 block text-center"
+                          : "bg-gradient-primary text-accent rounded- py-4 px-4 block text-center"
                       }
                     >
                       <div className="flex justify-between items-center">
-                        <span>تواصل معنـا</span>
+                        <span> تواصل معنـا</span>
                         <img src={arrowIconWhite} alt="Arrow Icon" />
                       </div>
                     </NavLink>
