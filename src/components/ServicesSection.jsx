@@ -27,6 +27,9 @@ import horizontalLine from "../assets/img/HorozontalLine.svg";
 import servicesFooter1 from "../assets/img/ServicesFooter1.svg";
 import servicesFooter2 from "../assets/img/ServicesFooter2.svg";
 
+import arrowDownIconLight from "../assets/img/arrowDownIconLight.svg";
+import arrowDownIconDark from "../assets/img/ArrowDownIconDark.svg";
+
 const tabs = [
   { id: "urban-planning", label: "التخطيط الحضري" },
   { id: "qualitative-options", label: "الخبرات النوعية" },
@@ -212,11 +215,15 @@ function ServicesSection() {
         </div>
       </div>
 
-        {/* Section Header  mobile */}
-        <div className="flex md:hidden mt-4 md:mt-12 mb- justify-between relative">
+      {/* Section Header  mobile */}
+      <div className="flex md:hidden mt-4 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w- md: lg:w-fit mt- relative">
-          <img src={servicesMobileHeader1} alt="Services Header 1" loading="lazy" />
+          <img
+            src={servicesMobileHeader1}
+            alt="Services Header 1"
+            loading="lazy"
+          />
           {/* Absolute positioned h2 */}
           <h1 className="absolute   top-1/2 right-3 transform -translate-x-1/4 -translate-y-1/2  text-[21px] md:text-3xl lg:text-[76.24px] font-extrabold text-tertiary mb-6">
             مجالاتنـــا
@@ -225,10 +232,13 @@ function ServicesSection() {
 
         {/* Right Side with ServicesHeader2 */}
         <div className="pt-5">
-          <img src={servicesMobileHeader2} alt="Services Header 2" loading="lazy" />
+          <img
+            src={servicesMobileHeader2}
+            alt="Services Header 2"
+            loading="lazy"
+          />
         </div>
       </div>
-
 
       <div className="md:py-8 px-8   md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
         {/* Sidebar Tabs */}
@@ -299,47 +309,54 @@ function ServicesSection() {
 
         {/* Main Content Area */}
         <div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:pt-0 md:mt-0 gap-8 md:gap-12   ">
-          <h3 className="md:text-[47.12px] text-2xl  md:mt-0 font-bold text-tertiary">
+          <h3 className="md:text-[47.12px] text-2xl   md:mt-0 font-bold text-tertiary">
             {serviceData[activeTab].title}
           </h3>
           <p
-            className={`text-justify  my- mb- w-full md:text-base text-sm font-semibold ${
-              isLastTabSelected ? "text-accent" : "text-gray-600"
+            className={`text-justify   font-camel font-light my- mb- w-full md:text-base text-sm md:font-semibold ${
+              isLastTabSelected ? "text-accent" : "text-primary"
             }`}
           >
             {serviceData[activeTab].description}
           </p>
 
           {/* Sub-services */}
-          <div className="md:itmen  w-full md:w-full flex items-start flex-col text-primary md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
+          <div className="w-full    grid grid-cols-2 auto-rows-fr gap-4 my-1 md:flex md:flex-row md:items-end md:justify-start md:gap-4">
             {serviceData[activeTab].subServices.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setHoveredSubService(index)}
                 onMouseLeave={() => setHoveredSubService(null)}
-                className={`relative group shadow-md p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
+                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)]  p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
                   isLastTabSelected
-                    ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
-                    : "bg-white"
+                    ? "bg-gradient-primary border  border-secondary border-opacity-25 text-white"
+                    : "bg-white text-primary"
                 }`}
                 style={{
                   borderRight: isLastTabSelected
                     ? "2px solid rgba(184, 132, 68, 0.45)"
-                    : "none", // Bottom-left border with 25% opacity
+                    : "none",
                   borderTop: isLastTabSelected
                     ? "2px solid rgba(184, 132, 68, 0.45)"
-                    : "none", // Bottom-left border with 25% opacity
-                  borderBottom: isLastTabSelected ? "none" : "none", // Bottom-left border none
+                    : "none",
+                  borderBottom: isLastTabSelected ? "none" : "none",
                 }}
               >
+                {/* Arrow Down Icon */}
+                <img
+                  src={isLastTabSelected ? arrowDownIconDark : arrowDownIconLight}
+                  alt="Arrow Down"
+                  className="absolute top-2 right-2 size-8 md:hidden rotate- "
+                  loading="lazy"
+                />
+
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className="size-10 md:size-14"
+                  className="size-10 md:size-14 "
                   loading="lazy"
                 />
-                {/* Fix for service.title overflow */}
-                <p className="text-base md:text-lg font-medium whitespace-normal break-words min-w-0 w-full">
+                <p className="text-base font-light md:text-lg  md:font-medium whitespace-normal break-words min-w-0 w-full">
                   {service.title}
                 </p>
 
@@ -358,7 +375,7 @@ function ServicesSection() {
                             subIndex % 2 === 0
                               ? "text-primary"
                               : "text-tertiary"
-                          }`} // Conditionally apply text color
+                          }`}
                         >
                           {subSub}
                         </div>
