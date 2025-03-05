@@ -13,6 +13,7 @@ import EngineeringManagement from "./pages/Fields/EngineeringManagement";
 import loaderGif from "./assets/img/loading1.gif"; 
 
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className="h-screen bg-accent">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/fields" element={<Fields />} />
