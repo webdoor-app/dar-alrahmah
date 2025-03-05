@@ -196,7 +196,7 @@ function ServicesSection() {
       }`}
     >
       {/* Section Header */}
-      <div className="flex mt-5 md:mt-12 mb- justify-between relative">
+      <div className="hidden  md:flex mt-5 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w-[30%] md: lg:w-fit md:mt-6 relative">
           <img src={servicesHeader1} alt="Services Header 1" loading="lazy" />
