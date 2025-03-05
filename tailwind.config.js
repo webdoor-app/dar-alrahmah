@@ -55,7 +55,12 @@ export default {
       },
       transitionDuration: {
         '300': '300ms',
-      }
+      },
+      screens: {
+        'max-xs': { max: '395px'},
+        'max-md': { max: '767px'},
+      },
+      
       
     },
   },

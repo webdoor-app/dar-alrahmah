@@ -213,7 +213,7 @@ function ServicesSection() {
       </div>
 
         {/* Section Header  mobile */}
-        <div className="flex md:hidden mt- md:mt-12 mb- justify-between relative">
+        <div className="flex md:hidden mt-4 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w- md: lg:w-fit mt- relative">
           <img src={servicesMobileHeader1} alt="Services Header 1" loading="lazy" />
@@ -230,9 +230,9 @@ function ServicesSection() {
       </div>
 
 
-      <div className="py-8 px-8  md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
+      <div className="md:py-8 px-8   md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
         {/* Sidebar Tabs */}
-        <aside className="order-1 flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-32 md:pt-0 relative  md:ml-">
+        <aside className="order-1   flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-20 md:pt-0 relative  md:ml-">
           {/* Line (SVG) */}
           <img
             src={line}
@@ -244,16 +244,16 @@ function ServicesSection() {
           <img
             src={horizontalLine}
             alt="line"
-            className="absolute right-[0 top-[27%]  md:-mt-[2.3rem]  lg:hidden h-full w- z-10"
+            className="absolute right-0 left-0 max-xs:top-[20%] max-md:top-[19%] top-[27%]   max-xs:w-[75%] w-[85%] sm:w-[88%] md:w-[86%] mx-auto text-center md:-mt-[2.3rem]  lg:hidden h-full w- z-10"
             loading="lazy"
           />
 
           {/* Menu */}
-          <ul className="lg:space-y-20  gap-9  flex   w-fit items-center justify-center   md:space-x-4 lg:block px-">
+          <ul className="lg:space-y-20  gap- flex   w- items-center justify-between  w-full   md:space-x- lg:block px-">
             {tabs.map((tab) => (
               <li
                 key={tab.id}
-                className={`cursor-pointer  md:text-base  flex flex-col items-center gap-1 lg:flex-row lg:gap-2 text-xs gap-y-4 lg:gap-y-0 text-nowrap lg:text-lg font-semibold transition-all ${
+                className={`cursor-pointer  md:text-base    flex flex-col items-center gap-1 lg:flex-row lg:gap-2 text-xs gap-y-4 lg:gap-y-0 text-nowrap lg:text-lg font-semibold transition-all ${
                   activeTab === tab.id
                     ? "text-secondary font-bold"
                     : isLastTabSelected
@@ -303,7 +303,7 @@ function ServicesSection() {
             {serviceData[activeTab].title}
           </h3>
           <p
-            className={`text-justify my- mb- w-full md:text-base text-sm font-semibold ${
+            className={`text-justify  my- mb- w-full md:text-base text-sm font-semibold ${
               isLastTabSelected ? "text-accent" : "text-gray-600"
             }`}
           >
@@ -311,7 +311,7 @@ function ServicesSection() {
           </p>
 
           {/* Sub-services */}
-          <div className="md:itmen w-full md:w-full flex items-start flex-col text-primary md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
+          <div className="md:itmen  w-full md:w-full flex items-start flex-col text-primary md:flex-row md:flex- md:items-end md:justify-start gap-4 my-1">
             {serviceData[activeTab].subServices.map((service, index) => (
               <div
                 key={index}
