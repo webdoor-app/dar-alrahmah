@@ -20,6 +20,8 @@ import engineeringIcon2 from "../assets/img/EngeneeringIcon2.svg";
 import engineeringIcon3 from "../assets/img/EngeneeringIcon3.svg";
 import servicesHeader1 from "../assets/img/ServicesHeader1.svg";
 import servicesHeader2 from "../assets/img/ServicesHeader2.svg";
+import servicesMobileHeader1 from "../assets/img/servicesMobileHeader1.svg";
+import servicesMobileHeader2 from "../assets/img/servicesMobileHeader2.svg";
 import line from "../assets/img/Line.svg";
 import horizontalLine from "../assets/img/HorozontalLine.svg";
 import servicesFooter1 from "../assets/img/ServicesFooter1.svg";
@@ -209,6 +211,24 @@ function ServicesSection() {
           <img src={servicesHeader2} alt="Services Header 2" loading="lazy" />
         </div>
       </div>
+
+        {/* Section Header  mobile */}
+        <div className="flex md:hidden mt- md:mt-12 mb- justify-between relative">
+        {/* Left Side with ServicesHeader1 and h2 */}
+        <div className="w- md: lg:w-fit mt- relative">
+          <img src={servicesMobileHeader1} alt="Services Header 1" loading="lazy" />
+          {/* Absolute positioned h2 */}
+          <h1 className="absolute   top-1/2 right-3 transform -translate-x-1/4 -translate-y-1/2  text-[21px] md:text-3xl lg:text-[76.24px] font-extrabold text-tertiary mb-6">
+            مجالاتنـــا
+          </h1>
+        </div>
+
+        {/* Right Side with ServicesHeader2 */}
+        <div className="pt-5">
+          <img src={servicesMobileHeader2} alt="Services Header 2" loading="lazy" />
+        </div>
+      </div>
+
 
       <div className="py-8 px-8  md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
         {/* Sidebar Tabs */}
