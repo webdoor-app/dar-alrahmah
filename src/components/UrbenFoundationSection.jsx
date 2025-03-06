@@ -5,6 +5,7 @@ import MasonaryGrid from "./MasonaryGrid";
 import UrbenFoundationSectionImg from "../assets/img/UrbenFoundationSection-img.png";
 import ServiceIcon1 from "../assets/img/ServiceIcon1.svg";
 import UrbenFoundationSectionHIcon1 from "../assets/img/UrbenFoundationSectionH-Icon-1.svg";
+import UrbenFoundationSectionFooterMobileIcon1 from "../assets/img/UrbenFoundationSectionFooterMobileIcon1.svg";
 import UrbenFoundationSectionHIcon2 from "../assets/img/UrbenFoundationSectionH-icon-2.svg";
 import ProjectWaletHeader1 from "../assets/img/ProjectWaletHeader1.svg";
 import ProjectWaletHeader2 from "../assets/img/ProjectWaletHeader2.svg";
@@ -31,7 +32,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
+        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
       ],
       cardsGroup2: [
         {
@@ -39,7 +40,11 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
+        {
+          title: "دعم متخذ القرار",
+          width: "w-full",
+          textColor: "text-primary",
+        },
         {
           title: "إعداد قواعد البيانات",
           width: "w-full",
@@ -51,7 +56,7 @@ function UrbenFoundationSection({ tabsToShow }) {
       id: 2,
       title: "تطوير التوجيه الاستراتيجي للمناطق",
       description: "صناعة المفاهيم والموجهات التخطيطية.",
-      img: ServiceIcon1,
+      img: UrbenFoundationSectionImg,
       cardsGroup1: [
         {
           title: "تحليل الوضع الراهن",
@@ -63,7 +68,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
+        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
       ],
       cardsGroup2: [
         {
@@ -71,7 +76,11 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
+        {
+          title: "دعم متخذ القرار",
+          width: "w-full",
+          textColor: "text-primary",
+        },
         {
           title: "إعداد قواعد البيانات",
           width: "w-full",
@@ -88,26 +97,30 @@ function UrbenFoundationSection({ tabsToShow }) {
       cardsGroup1: [
         {
           title: "صناعة القصة من خلال ربط الأبعاد المختلفة",
-          width: "w-1/2",
+          width: "w-full",
           textColor: "text-tertiary",
         },
         {
           title: "تطوير مواقع تاريخية",
-          width: "w-full",
+          width: "w-1/2",
           textColor: "text-tertiary",
         },
-        { title: "خلق وجهات سياحية", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "خلق وجهات سياحية",
+          width: "w-1/2",
+          textColor: "text-primary",
+        },
       ],
       cardsGroup2: [
         {
           title: "وضع المحددات والموجهات",
-          width: "w-1/3",
+          width: "w-full",
           textColor: "text-tertiary",
         },
         {
           title: "استقطاب الخبراء النوعيين",
-          width: "w-1/3",
-          textColor: "text-black",
+          width: "w-1/2",
+          textColor: "text-primary",
         },
         {
           title: "خلق فرص استثمارية",
@@ -136,7 +149,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "وضع المفاهيم وتطبيق المعايير",
           width: "w-1/2",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
       ],
       cardsGroup2: [
@@ -148,7 +161,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "الإشراف على التنفيذ والتشغيل",
           width: "w-1/3",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
         {
           title: "تصميم مسارات الحشود",
@@ -177,7 +190,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "إعتماد إسكان الحجاج والمعتمرين",
           width: "w-1/2",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
       ],
       cardsGroup2: [
@@ -189,7 +202,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "موائمة الخدمات مع احتياجات الضيف",
           width: "w-1/3",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
         {
           title: "ربط الخطط التشغيلية بمفاهيم النسك",
@@ -215,7 +228,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
+        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
       ],
       cardsGroup2: [
         {
@@ -223,7 +236,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
+        { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-primary" },
         {
           title: "إعداد قواعد البيانات",
           width: "w-full",
@@ -250,7 +263,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "ترخيص السكن الجماعي",
           width: "w-1/2",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
       ],
       cardsGroup2: [
@@ -259,7 +272,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "الرفع المساحي", width: "w-1/3", textColor: "text-black" },
+        { title: "الرفع المساحي", width: "w-1/3", textColor: "text-primary" },
         {
           title: "بناء قاعدة نظم المعلومات الجغرافية",
           width: "w-full",
@@ -275,7 +288,11 @@ function UrbenFoundationSection({ tabsToShow }) {
       cardsGroup1: [
         { title: "إدارة التكلفة", width: "w-1/2", textColor: "text-tertiary" },
         { title: "إدارة التشييد", width: "w-full", textColor: "text-tertiary" },
-        { title: "المراجعة والتقييم", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "المراجعة والتقييم",
+          width: "w-1/2",
+          textColor: "text-primary",
+        },
       ],
       cardsGroup2: [
         {
@@ -283,7 +300,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "أدارة الموارد", width: "w-1/3", textColor: "text-black" },
+        { title: "أدارة الموارد", width: "w-1/3", textColor: "text-primary" },
         {
           title: "إدارة الجداول الزمنية",
           width: "w-full",
@@ -304,7 +321,11 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "المتابعة والتقييم", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "المتابعة والتقييم",
+          width: "w-1/2",
+          textColor: "text-primary",
+        },
       ],
       cardsGroup2: [
         {
@@ -315,7 +336,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "متابعة الميزانيات والجداول الزمنية",
           width: "w-1/3",
-          textColor: "text-black",
+          textColor: "text-primary",
         },
         {
           title: "مطابقة المعايير والمواصفات الفنية",
@@ -376,19 +397,12 @@ function UrbenFoundationSection({ tabsToShow }) {
             </p>
           ))}
         </div>
-
-        <div className="flex justify-between pt-4">
+        {/* Mobile header icon */}
+        <div className="flex justify-end pt-5 ">
           {/* Left Side icon with ServicesHeader1 and h2 */}
-          <div className="w-0 ">
-            <img
-              src={UrbenFoundationSectionHIcon1}
-              alt="Services Header 1"
-              loading="lazy"
-            />
-          </div>
 
           {/* Right Side icon with ServicesHeader2 */}
-          <div className="w-1/3">
+          <div className="w-[40%] ">
             <img
               src={UrbenFoundationSectionHIcon2}
               alt="Services Header 2"
@@ -399,11 +413,11 @@ function UrbenFoundationSection({ tabsToShow }) {
       </div>
 
       {/* Rest of your existing content */}
-      <div className="md:m-base-m mx-5">
-        <div className="flex items-center justify-between gap-5 pt-">
+      <div className="md:m-base-m ">
+        <div className="flex items-center justify-between gap-5 pt- mx-5">
           {/* Content */}
-          <div className="pt w-1/ md:w-fit">
-            <h1 className="text-tertiary font-extrabold text-lg md:text-5xl mb-6 mt-">
+          <div className="pt w-full md:w-fit">
+            <h1 className="text-tertiary font-extrabold text-[18px] md:text-5xl mb-6 mt-">
               {tabContent[activeTab].title}
             </h1>
             <p className="font-light text-gray-500 md:justify- md:text- text-sm md:text-3xl">
@@ -412,7 +426,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           </div>
 
           {/* Image */}
-          <div className="w-[120%] md:w-fit felx items-center justify-center content-center text p-0 m-0 my-auto py-10 md:py-32">
+          <div className="w-[90%]  md:w-fit felx items-center justify-center content-center text p-0 m-0 my-auto py-10 md:py-32">
             <img
               src={tabContent[activeTab].img}
               alt=""
@@ -422,28 +436,42 @@ function UrbenFoundationSection({ tabsToShow }) {
           </div>
         </div>
 
-        {/* Cards Group 1 */}
-        <div className="flex items-stretch justify-center w-full text-wrap mt-6 gap-2 md:gap-4">
-          {tabContent[activeTab].cardsGroup1.map((card, index) => (
-            <div
-              key={index}
-              className={`p-2 md:p-10 rounded-lg shadow-md text-wrap h-full py-8 text- md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
-            >
-              <h1>{card.title}</h1>
-            </div>
-          ))}
+        {/* Mobile footer icon */}
+        <div className="flex md:hidden justify-between pb-5 ">
+          {/* Right Side icon  */}
+          <div className="w-[%] ">
+            <img
+              src={UrbenFoundationSectionFooterMobileIcon1}
+              alt="Services Header 1"
+              loading="lazy"
+            />
+          </div>
         </div>
 
-        {/* Cards Group 2 */}
-        <div className="flex items-stretch justify-center w-full md:mt- mt-2 gap-2 md:gap-4">
-          {tabContent[activeTab].cardsGroup2.map((card, index) => (
-            <div
-              key={index}
-              className={`p-2 md:p-10 rounded-lg shadow-md h-full py-8 text-wrap md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
-            >
-              <h1>{card.title}</h1>
-            </div>
-          ))}
+        <div className="mx-5">
+          {/* Cards Group 1 */}
+          <div className="flex items-stretch justify-center w-full text-wrap mt-6 gap-2 md:gap-4 ">
+            {tabContent[activeTab].cardsGroup1.map((card, index) => (
+              <div
+                key={index}
+                className={`p-2 md:p-10 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] text-wrap h-full py-8 text- md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
+              >
+                <h1>{card.title}</h1>
+              </div>
+            ))}
+          </div>
+
+          {/* Cards Group 2 */}
+          <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
+            {tabContent[activeTab].cardsGroup2.map((card, index) => (
+              <div
+                key={index}
+                className={`p-2 md:p-10 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] h-full py-8 text-wrap md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
+              >
+                <h1>{card.title}</h1>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -467,7 +495,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         </div>
 
         {/* Section Header Mobile */}
-        <div className="md:hidden flex justify-between relative pt-32">
+        <div className="md:hidden flex justify-between relative pt-8 md:pt-32">
           {/* Left Side with ServicesHeader1 and h2 */}
           <div className="w mt-4 relative">
             <h1 className="absolute top-1/2 text-nowrap -left- -translate-x-1/4 -translate-y-1/2 text-2xl font-bold text-tertiary mb-6">
@@ -482,7 +510,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         </div>
 
         {/* Grid */}
-        <div className="mx-4 flex gap-4 py-5 pb-20">
+        <div className="mx-4 flex gap-4 py-5 pb-10 md:pb-20">
           {/* Desktop Grid */}
           <div className="hidden md:flex">
             <MasonaryGrid
