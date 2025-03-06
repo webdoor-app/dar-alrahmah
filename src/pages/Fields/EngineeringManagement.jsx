@@ -17,7 +17,7 @@ function EngineeringManagement() {
         <img
           src={mobileFrame}
           alt="icon"
-          className="flex md:hidden absolute left-0 top-[42%]  "
+          className="flex md:hidden absolute left-0 top-[38.5%]   "
         />
       </div>
       {/*Hero section  */}

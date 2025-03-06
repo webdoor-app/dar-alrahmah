@@ -21,14 +21,30 @@ function UrbenFoundationSection({ tabsToShow }) {
         "إنشاء وتشغيل المراصد الحضرية لتحسين إدارة المدينة / توفير وربط البيانات",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "تحليل الوضع الراهن", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "صناعة وقياس المؤشرات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "تحليل الوضع الراهن",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "صناعة وقياس المؤشرات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "دراسة توجهات المنطقة", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "دراسة توجهات المنطقة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
-        { title: "إعداد قواعد البيانات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "إعداد قواعد البيانات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "تطوير التوجيه الاستراتيجي للمناطق": {
@@ -37,78 +53,182 @@ function UrbenFoundationSection({ tabsToShow }) {
       description: "صناعة المفاهيم والموجهات التخطيطية.",
       img: ServiceIcon1,
       cardsGroup1: [
-        { title: "تحليل الوضع الراهن", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "صناعة وقياس المؤشرات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "تحليل الوضع الراهن",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "صناعة وقياس المؤشرات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "دراسة توجهات المنطقة", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "دراسة توجهات المنطقة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
-        { title: "إعداد قواعد البيانات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "إعداد قواعد البيانات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "تصميم الوجهات التاريخية والسياحية": {
       id: 3,
       title: "  تصميم الوجهات التاريخية والسياحية",
-      description: "تطوير وجهات سياحية وتاريخية مستدامة تجزب الزوار وتحافث على التراث المحلي",
+      description:
+        "تطوير وجهات سياحية وتاريخية مستدامة تجزب الزوار وتحافث على التراث المحلي",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "صناعة القصة من خلال ربط الأبعاد المختلفة", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "تطوير مواقع تاريخية", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "صناعة القصة من خلال ربط الأبعاد المختلفة",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "تطوير مواقع تاريخية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "خلق وجهات سياحية", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "وضع المحددات والموجهات", width: "w-1/3", textColor: "text-tertiary" },
-        { title: "استقطاب الخبراء النوعيين", width: "w-1/3", textColor: "text-black" },
-        { title: "خلق فرص استثمارية", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "وضع المحددات والموجهات",
+          width: "w-1/3",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "استقطاب الخبراء النوعيين",
+          width: "w-1/3",
+          textColor: "text-black",
+        },
+        {
+          title: "خلق فرص استثمارية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "تصميم وتخطيط حركة الحشود": {
       id: 4,
       title: "تصميم وتخطيط حركة الحشود",
-      description: "تقديم حلول متكاملة لضمان سلامة الحشود بما يتوافق مع متطلبات المكان",
+      description:
+        "تقديم حلول متكاملة لضمان سلامة الحشود بما يتوافق مع متطلبات المكان",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "إعداد المخططات وتقييمها", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "تحليل المواقع والتأكد من جاهزيتها", width: "w-full", textColor: "text-tertiary" },
-        { title: "وضع المفاهيم وتطبيق المعايير", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "إعداد المخططات وتقييمها",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "تحليل المواقع والتأكد من جاهزيتها",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "وضع المفاهيم وتطبيق المعايير",
+          width: "w-1/2",
+          textColor: "text-black",
+        },
       ],
       cardsGroup2: [
-        { title: "التنسيق بين الجهات المشغلة", width: "w-full", textColor: "text-tertiary" },
-        { title: "الإشراف على التنفيذ والتشغيل", width: "w-1/3", textColor: "text-black" },
-        { title: "تصميم مسارات الحشود", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "التنسيق بين الجهات المشغلة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "الإشراف على التنفيذ والتشغيل",
+          width: "w-1/3",
+          textColor: "text-black",
+        },
+        {
+          title: "تصميم مسارات الحشود",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "تطوير مرافق منظومة ضيوف الرحمن": {
       id: 5,
       title: "تطوير مرافق منظومة ضيوف الرحمن",
-      description: "تقديم حلول لتطوير وإدارة المرافق ضيوف الرحمن لتحقيق تجربة روحاية مميزة",
+      description:
+        "تقديم حلول لتطوير وإدارة المرافق ضيوف الرحمن لتحقيق تجربة روحاية مميزة",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "الإشراف على التشغيل", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "تصميم المشاريع النوعية", width: "w-full", textColor: "text-tertiary" },
-        { title: "إعتماد إسكان الحجاج والمعتمرين", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "الإشراف على التشغيل",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "تصميم المشاريع النوعية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "إعتماد إسكان الحجاج والمعتمرين",
+          width: "w-1/2",
+          textColor: "text-black",
+        },
       ],
       cardsGroup2: [
-        { title: "إدارة متطلبات اصحاب المصلحة", width: "w-full", textColor: "text-tertiary" },
-        { title: "موائمة الخدمات مع احتياجات الضيف", width: "w-1/3", textColor: "text-black" },
-        { title: "ربط الخطط التشغيلية بمفاهيم النسك", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "إدارة متطلبات اصحاب المصلحة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "موائمة الخدمات مع احتياجات الضيف",
+          width: "w-1/3",
+          textColor: "text-black",
+        },
+        {
+          title: "ربط الخطط التشغيلية بمفاهيم النسك",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "التصميم العمراني": {
       id: 6,
       title: "التصميم العمراني",
-      description: "فهم احتياجات العميل وربطها بمحددات الموقع لتصميم الوظيفة المناسبة للمستخدم النهائي",
+      description:
+        "فهم احتياجات العميل وربطها بمحددات الموقع لتصميم الوظيفة المناسبة للمستخدم النهائي",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "تحليل الوضع الراهن", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "صناعة وقياس المؤشرات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "تحليل الوضع الراهن",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "صناعة وقياس المؤشرات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "دراسة توجهات المنطقة", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "دراسة توجهات المنطقة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-black" },
-        { title: "إعداد قواعد البيانات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "إعداد قواعد البيانات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "الخدمات المساندة": {
@@ -117,14 +237,34 @@ function UrbenFoundationSection({ tabsToShow }) {
       description: "تقديم الأعمال المكملة لإتمام الإجراءات والعمليات",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
-        { title: "استخراج رخص المنشئات", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "تصميم واعتماد المنشئات وفق معايير الأمن والسلامة", width: "w-full", textColor: "text-tertiary" },
-        { title: "ترخيص السكن الجماعي", width: "w-1/2", textColor: "text-black" },
+        {
+          title: "استخراج رخص المنشئات",
+          width: "w-1/2",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "تصميم واعتماد المنشئات وفق معايير الأمن والسلامة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "ترخيص السكن الجماعي",
+          width: "w-1/2",
+          textColor: "text-black",
+        },
       ],
       cardsGroup2: [
-        { title: "دعم تقني لتنسيق مشاركة المعلومات", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "دعم تقني لتنسيق مشاركة المعلومات",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "الرفع المساحي", width: "w-1/3", textColor: "text-black" },
-        { title: "بناء قاعدة نظم المعلومات الجغرافية", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "بناء قاعدة نظم المعلومات الجغرافية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "إدارة المشاريع المتعثرة (PMO)": {
@@ -138,25 +278,50 @@ function UrbenFoundationSection({ tabsToShow }) {
         { title: "المراجعة والتقييم", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "  إدارة أصحاب المصلحة", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "  إدارة أصحاب المصلحة",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "أدارة الموارد", width: "w-1/3", textColor: "text-black" },
-        { title: "إدارة الجداول الزمنية", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "إدارة الجداول الزمنية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
     "الإشراف على التنفيذ": {
       id: 9,
       title: "الإشراف على التنفيذ",
-      description: "الإشراف على إنشاء وتشغيل المشاريع القائمة بما يضمن جودة العمل",
+      description:
+        "الإشراف على إنشاء وتشغيل المشاريع القائمة بما يضمن جودة العمل",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
         { title: "إدارة المواقع", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "الرصد والتوثيق", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "الرصد والتوثيق",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
         { title: "المتابعة والتقييم", width: "w-1/2", textColor: "text-black" },
       ],
       cardsGroup2: [
-        { title: "ضمان مستوى جودة العمل", width: "w-full", textColor: "text-tertiary" },
-        { title: "متابعة الميزانيات والجداول الزمنية", width: "w-1/3", textColor: "text-black" },
-        { title: "مطابقة المعايير والمواصفات الفنية", width: "w-full", textColor: "text-tertiary" },
+        {
+          title: "ضمان مستوى جودة العمل",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
+        {
+          title: "متابعة الميزانيات والجداول الزمنية",
+          width: "w-1/3",
+          textColor: "text-black",
+        },
+        {
+          title: "مطابقة المعايير والمواصفات الفنية",
+          width: "w-full",
+          textColor: "text-tertiary",
+        },
       ],
     },
   };
@@ -167,10 +332,7 @@ function UrbenFoundationSection({ tabsToShow }) {
       <div className="hidden md:flex items-center justify-between pt-20 w-full">
         {/* Left Side icon with ServicesHeader1 and h2 */}
         <div className="hidden md:flex">
-          <img
-            src={UrbenFoundationSectionHIcon1}
-            alt="Services Header 1"
-          />
+          <img src={UrbenFoundationSectionHIcon1} alt="Services Header 1" />
         </div>
 
         {/* Tabs Display - Showing only specified tabs */}
@@ -192,23 +354,20 @@ function UrbenFoundationSection({ tabsToShow }) {
 
         {/* Right Side icon with ServicesHeader2 */}
         <div className="w">
-          <img
-            src={UrbenFoundationSectionHIcon2}
-            alt="Services Header 2"
-          />
+          <img src={UrbenFoundationSectionHIcon2} alt="Services Header 2" />
         </div>
       </div>
 
       {/* Section Header mobile */}
       <div className="flex-col md:hidden items-center justify-between pt-20 w-full">
         {/* Tabs */}
-        <div className="flex w-[90%] text-center mx-auto md:flex-row gap-5 items-center justify-center py-2 px-3 rounded-2xl bg-gray-100">
+        <div className="flex w-[94%] text-center mx-auto md:flex-row gap- items-center justify-center py-3 px-2 rounded-2xl bg-gray-100 ">
           {tabsToShow.map((tabName) => (
             <p
               key={tabName}
-              className={`px-4 py-4 rounded-2xl cursor-pointer ${
+              className={`px-8 py-4 rounded-2xl cursor-pointer ${
                 activeTab === tabName
-                  ? "text-primaryBurnt font- text-xs  bg-white"
+                  ? "text-primary font-extrabold text-xs  bg-white"
                   : "text-gray-300 text-xs"
               }`}
               onClick={() => setActiveTab(tabName)}
@@ -294,10 +453,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         <div className="hidden md:flex justify-between relative pt-32">
           {/* Left Side with ServicesHeader1 and h2 */}
           <div className="w mt-4 relative">
-            <img
-              src={ProjectWaletHeader1}
-              alt="Services Header 1"
-            />
+            <img src={ProjectWaletHeader1} alt="Services Header 1" />
             {/* Absolute positioned h2 */}
             <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-5xl font-bold text-tertiary mb-6">
               محفظة الأعمال
@@ -306,10 +462,7 @@ function UrbenFoundationSection({ tabsToShow }) {
 
           {/* Right Side with ServicesHeader2 */}
           <div>
-            <img
-              src={ProjectWaletHeader2}
-              alt="Services Header 2"
-            />
+            <img src={ProjectWaletHeader2} alt="Services Header 2" />
           </div>
         </div>
 
@@ -324,10 +477,7 @@ function UrbenFoundationSection({ tabsToShow }) {
 
           {/* Right Side with ServicesHeader2 */}
           <div className="w-1/3">
-            <img
-              src={ProjectWaletHeader2}
-              alt="Services Header 2"
-            />
+            <img src={ProjectWaletHeader2} alt="Services Header 2" />
           </div>
         </div>
 
