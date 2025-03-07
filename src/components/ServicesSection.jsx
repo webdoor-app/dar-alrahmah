@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Import all images
 import urbanPlanningImage from "../assets/img/urban-planning.png";
@@ -31,10 +32,26 @@ import arrowDownIconLight from "../assets/img/arrowDownIconLight.svg";
 import arrowDownIconDark from "../assets/img/ArrowDownIconDark.svg";
 
 const tabs = [
-  { id: "urban-planning", label: "التخطيط الحضري" },
-  { id: "qualitative-options", label: "الخبرات النوعية" },
-  { id: "architectural-design", label: "التصميم المعماري" },
-  { id: "engineering-management", label: "الإدارة الهندسية" },
+  {
+    id: "urban-planning",
+    label: "التخطيط الحضري",
+    path: "/fields/UrbanPlanning",
+  },
+  {
+    id: "qualitative-options",
+    label: "الخبرات النوعية",
+    path: "/fields/Qualitives",
+  },
+  {
+    id: "architectural-design",
+    label: "التصميم المعماري",
+    path: "/fields/DevlopmentDesign",
+  },
+  {
+    id: "engineering-management",
+    label: "الإدارة الهندسية",
+    path: "/fields/EngineeringManagement",
+  },
 ];
 
 const serviceData = {
@@ -189,8 +206,10 @@ function ServicesSection() {
   const [hoveredSubService, setHoveredSubService] = useState(null);
 
   // check if the last tab is selected.
-
   const isLastTabSelected = activeTab === tabs[tabs.length - 1].id;
+
+  // Get the path for the active tab
+  const activeTabPath = tabs.find((tab) => tab.id === activeTab)?.path;
 
   return (
     <section
@@ -343,12 +362,20 @@ function ServicesSection() {
                 }}
               >
                 {/* Arrow Down Icon */}
-                <img
-                  src={isLastTabSelected ? arrowDownIconDark : arrowDownIconLight}
-                  alt="Arrow Down"
-                  className="absolute top-2 right-2 size-8 md:hidden rotate- "
-                  loading="lazy"
-                />
+                {activeTabPath && (
+                  <Link to={activeTabPath}>
+                    <img
+                      src={
+                        isLastTabSelected
+                          ? arrowDownIconDark
+                          : arrowDownIconLight
+                      }
+                      alt="Arrow Down"
+                      className="absolute top-2 right-2 size-8 md:hidden rotate-"
+                      loading="lazy"
+                    />
+                  </Link>
+                )}
 
                 <img
                   src={service.icon}
@@ -362,7 +389,7 @@ function ServicesSection() {
 
                 {/* Sub-sub-services Dropdown */}
                 {hoveredSubService === index && (
-                  <div className="absolute top-full sm:mx-auto md:mx-0 md:-right-4 transform translate-y-2 z-10 min-w-max">
+                  <div className="absolute top-full sm:mx-auto md:mx-0 md:-right-4 transform translate-y-2 z-10 min-w-max hidden md:flex">
                     <div className="mt-2 bg- pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg">
                       {service.subSubServices?.map((subSub, subIndex) => (
                         <div
