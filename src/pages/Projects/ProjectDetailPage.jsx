@@ -3,14 +3,16 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-// Import your projects array (or fetch it from an API)
-import { projects } from "../../components/MasonaryGrid"; // Adjust the import path as needed
+// Import  projects array 
+import { projects } from "../../components/MasonaryGrid"; 
 import { img } from "framer-motion/client";
 
 import ProjectSubHeader1 from "../../assets/img/ProjectSubHeader1.svg";
 import ProjectHeaderP1 from "../../assets/img/ProjectHeaderP1.svg";
 import ProjectHeaderP2 from "../../assets/img/ProjectHeaderP2.svg";
 
+import ProjectImagesHeader1 from "../../assets/img/ProjectImagesHeader1.svg";
+import ProjectImagesHeader2 from "../../assets/img/ProjectImagesHeader2.svg";
 
 function ProjectDetailPage() {
   // Get the projectId from the URL
@@ -33,7 +35,7 @@ function ProjectDetailPage() {
       <Header />
 
       {/* Section Header */}
-      <div className="flex justify-between relative pt-32">
+      <div className="flex justify-between relative pt-20 md:pt-32 ">
         {/* Left Side with ServicesHeader1 and h2 */}
         {/* <div className="w-[30%] mt-4 relative">
           <img
@@ -47,38 +49,34 @@ function ProjectDetailPage() {
         </div> */}
 
         {/* path */}
-        <div className="mt-14 pb-5 md:mt-20 mx-4 md:m-base-m flex z-30 font-camel text-nowrap text-xs md:text-sm text-gray-600 font-">
+        <div className="mt-14 pb-5 md:mt-20 mx-4 md:m-base-m flex z-30 font-camel text-nowrap text-xs md:text-sm md:pb-9  text-gray-600 font-">
           أعمالنـا / <span>{project.title}</span>
         </div>
 
         {/* Right Side with ServicesHeader2 */}
-        <div className="w-1/4 md:w-64 mt-4">
-          <img
-            src={ProjectSubHeader1}
-            alt="Projects Header 2"
-          />
+        <div className="w-1/4 md:w-64 mt-auto mb-2 md:mb-0 md:mt-12 ">
+          <img src={ProjectSubHeader1} alt="Projects Header 2" />
         </div>
       </div>
 
-
       {/* Project Details ////////////////////////////////////////*/}
       <div className=" py-">
-        <div className="  rounded-xl md:rounded-bl-3xl h-fit bg-[#FFFFFF] mx-4 md:mx-8">
+        <div className="  rounded-xl md:rounded-bl-3xl h-fit bg-[#FFFFFF] mx-4 md:mx-8 ">
           {/* top */}
           <div className=" flex  items-center justify-">
             <div className=" card-container   bg-accent rounded-bl-xl md:rounded-bl-3xl">
               <div className="card-header">
-                <h1 className="font-extrabold px-1 z-10  p-3 md:p-5 md:px-10 text-lg text- md:text-5xl text-tertiary">
+                <h1 className="font-extrabold px-2  z-10  py-1 md:py-3 md:px-8 text-[21px] text- md:text-5xl lg:text-[76.2px] text-tertiary ">
                   {project.title}
                 </h1>
               </div>
             </div>
 
-            <div className="flex gap-2 md:gap-4 w- text-center px-2 md:px-7">
+            <div className="flex gap-2   w- text-center px-2 md:px-7 ">
               {project.categories.map((category, index) => (
                 <span
                   key={index}
-                  className="md:px-4 md:py-2 py-1 text-xs md:text-sm  px-2 border md:border-2 border-primary font-bold text-gray-700 rounded-lg"
+                  className="md:px-4 md:py-2 py-1 text-[8px] md:text-sm lg:text-[20px] flex items-center px-2 border md:border-2 border-primary font-bold text-black rounded-md md:rounded-lg"
                 >
                   {category}
                 </span>
@@ -89,7 +87,7 @@ function ProjectDetailPage() {
           {/* bottom */}
           <div className="  md:flex gap-3  items justify-between i px-6 md:px-12 py-8 ">
             {/* contianer 1 */}
-            <div className="  flex items-start justify-center w-1/2 md:w-[30em]  md:order-2   justify-  ">
+            <div className="  flex items-start justify-center w-1/2 md:w-[30em]  md:order-2   pb-2 md:pb-0 justify-  ">
               {project.partner && (
                 <img
                   src={project.partner}
@@ -101,13 +99,16 @@ function ProjectDetailPage() {
 
             {/* container 2 */}
             <div className=" w-  order-2 py-3 md:order-1">
-              <p className="z-10 text-xs md:text-base font-light text-justify text-gray-700">
+              <p className="z-10 text-xs leading-4 md:text-base md:leading-7 lg:text-[20px] lg:leading-7 font-light text-justify text-gray-700">
                 {project.fullDescription}
               </p>
 
               {/* Budget */}
               <div className="flex items-center gap-5 mt-8">
-                <p className="text-sm md:text-xl font-light"> {project.statistics}</p>
+                <p className="text-sm md:text-xl font-light">
+                  {" "}
+                  {project.statistics}
+                </p>
                 <span className="text-sm md:text-xl font-sans font-light text-gray-700">
                   {project.budget}
                 </span>
@@ -118,26 +119,36 @@ function ProjectDetailPage() {
       </div>
 
       {/* Section Header */}
-      <div className="flex justify-between relative pt-32">
-        {/* Left Side with ServicesHeader1 and h2 */}
-        <div className="md:w-[30%]    w-1/3 mt-4 relative">
+      <div className="flex justify-between relative pt-8 md:pt-10 ">
+        {/* Left Side with ServicesHeader1 desktop */}
+        <div className="md:w-[30%] hidden md:flex     w-1/3 mt-4 relative">
           <img
-            src={ProjectHeaderP1}
+            src={ProjectImagesHeader1}
             alt="Projects Header 1"
-            className="hidden md:flex"
+            className=""
           />
           {/* Absolute positioned h2 */}
-          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-10 md:-translate-x-1/4 -translate-y-1/2 text-nowrap text-lg md:text-5xl font-bold text-tertiary mb-6">
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-10 md:-translate-x-1/4 -translate-y-1/2 text-nowrap text-lg md:text-5xl lg:text-[47.12px] font-bold text-tertiary mb-6">
+            صور المشروع
+          </h1>
+        </div>
+
+        {/* Left Side with ServicesHeader1 mobile */}
+        <div className=" flex md:hidden     mt-4 relative">
+          <img
+            src={ProjectImagesHeader2}
+            alt="Projects Header 1"
+            className=""
+          />
+          {/* Absolute positioned h2 */}
+          <h1 className="absolute top-3 -right-4 transform -translate-x-10 md:-translate-x-1/4 -translate-y-1/2 text-nowrap text-lg md:text-5xl lg:text-[47.12px] font-bold text-tertiary mb-6">
             صور المشروع
           </h1>
         </div>
 
         {/* Right Side with ServicesHeader2 */}
-        <div className="md:w w-1/3   mt-4">
-          <img
-            src={ProjectHeaderP2}
-            alt="Projects Header 2"
-          />
+        <div className=" w-1/3 hidden md:flex  mt-4 ">
+          <img src={ProjectHeaderP2} alt="Projects Header 2" />
         </div>
       </div>
 
@@ -145,7 +156,7 @@ function ProjectDetailPage() {
 
       {/*Imaages Content */}
 
-      <div className="mx-4 md:mx-8 py-9">
+      <div className="mx-4 md:mx-8 py-5 md:py-9">
         <div className="grid grid-cols-1   lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:h-[600px]">
           {/* Mobile: Main image first */}
           <div className="lg:hidden">
@@ -171,7 +182,7 @@ function ProjectDetailPage() {
 
           {/* Main Image - Desktop */}
           <div className="hidden lg:flex col-span-1 gap-1 row-span-2">
-          {project.detailImages.slice(2).map((img, index) => (
+            {project.detailImages.slice(2).map((img, index) => (
               <div key={`left-${index}`} className="h-full">
                 <img
                   src={img}
