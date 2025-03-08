@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-// Import  projects array 
-import { projects } from "../../components/MasonaryGrid"; 
+// Import  projects array
+import { projects } from "../../components/MasonaryGrid";
 import { img } from "framer-motion/client";
 
 import ProjectSubHeader1 from "../../assets/img/ProjectSubHeader1.svg";
@@ -21,6 +21,9 @@ function ProjectDetailPage() {
   // Find the project by ID
   const project = projects.find((p) => p.id === parseInt(projectId));
 
+  // State to track the current budget index
+  const [currentBudgetIndex, setCurrentBudgetIndex] = useState(0);
+
   // If project not found, show an error message
   if (!project) {
     return (
@@ -29,6 +32,18 @@ function ProjectDetailPage() {
       </div>
     );
   }
+
+  // update the budget index every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBudgetIndex((prevIndex) =>
+        prevIndex === project.budget.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3500); // 3.5 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [project.budget.length]);
 
   return (
     <div className=" bg-accent font-camel overflow-hidden">
@@ -98,20 +113,40 @@ function ProjectDetailPage() {
             </div>
 
             {/* container 2 */}
-            <div className=" w-  order-2 py-3 md:order-1">
+            <div className=" w-  order-2 pt-3 md:order-1 ">
               <p className="z-10 text-xs leading-4 md:text-base md:leading-7 lg:text-[20px] lg:leading-7 font-light text-justify text-gray-700">
                 {project.fullDescription}
               </p>
 
-              {/* Budget */}
-              <div className="flex items-center gap-5 mt-8">
-                <p className="text-sm md:text-xl font-light">
-                  {" "}
+              {/* Budget Section */}
+              <div className="flex items-start gap-5 mt-8">
+                {/* Statistics Text */}
+                <p className="text-sm md:text-xl text-nowrap font-bold mt-2">
                   {project.statistics}
                 </p>
-                <span className="text-sm md:text-xl font-sans font-light text-gray-700">
-                  {project.budget}
-                </span>
+
+                {/* Budget Text Container */}
+                <div className="overflow-hidden h-20 w-full relative ">
+                  {project.budget.map((item, index) => (
+                    <div
+                      key={index}
+                      className={`absolute top-2 left-0 w-full transition-all duration-1000 ease-in-out ${
+                        index === currentBudgetIndex
+                          ? "opacity-100"
+                          : "opacity-0"
+                      }`}
+                      style={{
+                        transform: `translateY(${
+                          (index - currentBudgetIndex) * 100
+                        }%)`,
+                      }}
+                    >
+                      <span className="text-sm md:text-xl font-sans font-light text-gray-700 break-words">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
