@@ -49,7 +49,7 @@ function SlideCards() {
   const isLastSlide = activeIndex === cards.length - 1;
 
   return (
-    <div className="relative w-full h-[500px] md:h-fit md:pt-[17rem] pt-20 md:mt-2  overflow-hidden ">
+    <div className="relative w-full h-[500px] md:h-fit md:pt-[17rem] pt-20 md:mt-2  overflow-hidden  ">
       {/* Cards Container */}
       <div className="relative mb-4 w-full h-full md:h-[30rem] md:flex items-center justify-center">
         {cards.map((card, index) => {
@@ -59,7 +59,7 @@ function SlideCards() {
           return (
             <div
               key={card.id}
-              className={`absolute md:w[70rem] lg:w-[75rem] xl:w-[90rem] w-[50rem]  transition-all duration-500 ease-in-out ${
+              className={`absolute md:w[70rem] lg:w-[75rem] xl:w-[90rem] w-[50rem]   transition-all duration-500 ease-in-out ${
                 isActive ? "z-10" : "z-0"
               }`}
               style={{
@@ -70,7 +70,7 @@ function SlideCards() {
                 opacity: isActive ? 1 : 0.7,
               }}
             >
-              <div className="bg- w-full overflow-">
+              <div className="bg- w-full overflow- flex items-center ">
                 {/* Responsive Image Rendering */}
                 <img
                   src={card.image} // Default image for larger screens
@@ -80,7 +80,7 @@ function SlideCards() {
                 <img
                   src={card.mobileImage} // Mobile image for small screens
                   alt={`Slide ${card.id}`}
-                  className="w-1/2 h-auto object-cover md:hidden" // Hide on larger screens
+                  className="w-screen h-auto  flex justify-center items-center text-center object-cover md:hidden" // Hide on larger screens
                 />
                 {/* <div className="p-6 border border-red-600">
                   <h3 className="text-2xl font-bold mb-3">{card.title}</h3>
@@ -94,8 +94,6 @@ function SlideCards() {
 
       {/* Navigation Arrows */}
       <div className="absolute bottom-8 md:-bottom-3  mb-8 md:mb-4 mt-4 left-1/2 transform -translate-x-1/2 flex gap-4 z-40">
-     
-
         {/* Previous Button */}
         <button
           onClick={goToPrev}
@@ -111,8 +109,8 @@ function SlideCards() {
           />
         </button>
 
-           {/* Next Button */}
-           <button
+        {/* Next Button */}
+        <button
           onClick={goToNext}
           disabled={isLastSlide} // Disable if it's the last slide
           className={`bg-secondary p-2 sm:p-4 rounded-full  hover:scale-110 transition-transform ${
