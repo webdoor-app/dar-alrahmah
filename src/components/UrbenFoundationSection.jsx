@@ -13,7 +13,7 @@ import ProjectWaletHeader2 from "../assets/img/ProjectWaletHeader2.svg";
 function UrbenFoundationSection({ tabsToShow }) {
   const [activeTab, setActiveTab] = useState(tabsToShow[0]); // Set the first tab as active by default
 
-  //  tab content with 9 items
+  //  tab content
   const tabContent = {
     "تأسيس المراصد الحضرية": {
       id: 1,
@@ -24,12 +24,13 @@ function UrbenFoundationSection({ tabsToShow }) {
       cardsGroup1: [
         {
           title: "تحليل الوضع الراهن",
-          width: "w-1/2",
+          width: "w-[10%]",
           textColor: "text-tertiary",
         },
         {
           title: "صناعة وقياس المؤشرات",
-          width: "w-full",
+          width: "w-[5%]",
+          
           textColor: "text-tertiary",
         },
         { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
@@ -450,28 +451,34 @@ function UrbenFoundationSection({ tabsToShow }) {
 
         <div className="mx-5">
           {/* Cards Group 1 */}
-          <div className="flex items-stretch justify-center w-full text-wrap mt-6 gap-2 md:gap-4 ">
+          <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
             {tabContent[activeTab].cardsGroup1.map((card, index) => (
               <div
                 key={index}
-                className={`p-2 md:p-10 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] text-wrap h-full py-8 text- md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
+                className={`${card.width === "w-1/2" ? "basis-1/2" : "basis-full"} 
+                min-w-0 p-2 md:p-4 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] 
+                bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center py-5 md:min-h-[150px] 
+                ${card.textColor}`}
               >
-                <h1>{card.title}</h1>
+                <h1 className="p-2">{card.title}</h1>
               </div>
             ))}
           </div>
 
           {/* Cards Group 2 */}
-          <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
-            {tabContent[activeTab].cardsGroup2.map((card, index) => (
-              <div
-                key={index}
-                className={`p-2 md:p-10 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] h-full py-8 text-wrap md:py-14 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center ${card.width} ${card.textColor}`}
-              >
-                <h1>{card.title}</h1>
-              </div>
-            ))}
-          </div>
+         <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
+          {tabContent[activeTab].cardsGroup2.map((card, index) => (
+            <div
+              key={index}
+              className={`${card.width === "w-1/2" ? "basis-1/2" : "basis-full"} 
+                min-w-0 p-2 md:p-4 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] 
+                bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center py-5 md:min-h-[150px] 
+                ${card.textColor}`}
+            >
+              <h1 className="p-2">{card.title}</h1>
+            </div>
+          ))}
+        </div>
         </div>
       </div>
 
