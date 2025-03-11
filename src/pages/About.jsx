@@ -11,7 +11,7 @@ function About() {
     <div className=" h-fit flex flex-col justify-between font-camel  bg-accent ">
       <Header />
 
-      <div className="pt-48 md:pt-0 pb-8 md:pb-0">
+      <div className="pt-20 md:pt-0 pb-8 md:pb-0">
         <SlideCards />
 
 
@@ -30,7 +30,7 @@ function About() {
 
 
         {/*Mobile Section Footer */}
-        <div className="md:hidden justify-between flex">
+        <div className="md:hidden justify-between pt-8 flex">
           {/* Right Side with ServicesFooter2 */}
           <div className="w-[90%]  mb-">
             <img src={AboutMobileFooter} alt="About Footer 2" />
