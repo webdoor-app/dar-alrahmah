@@ -462,25 +462,25 @@ function MasonaryGrid({
     {displayedProjects.map((project, index) => (
       <div
         key={project.id}
-        className={`masonry-item cursor-pointer relative group mb-4 rounded-xl md:rounded-2xl h-fit font-camel overflow-hidden  ${
+        className={`masonry-item cursor-pointer relative group mb-4 rounded-1xl md:rounded-2xl h-fit font-camel overflow-hidden z-10   ${
           showMoreButton && index === displayedProjects.length - 1
-            ? "rounded-bl-none"
+            ? "md:rounded-bl-none rounded-bl-none "
             : ""
         }`}
         onClick={() => handleProjectClick(project.id)}
       >
-        <div className="card-content">
-          <div className="relative">
+        <div className="card-content border border-accent  rounded-xl md:rounded-2xl 2xl:border-none  overflow-hidden ">
+          <div className="relative -z-30">
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover "
               loading="lazy"
             />
-            <div className="absolute inset-0 rounded- bg-black/30 transition-opacity duration-300 group-hover:bg-black/40" />
-            <div className="absolute inset-0 p-2 md:px-5 sm:p- flex flex-col rounded- justify-between text-white">
+            <div className="absolute inset-0 rounded- bg-black/30 transition-opacity duration-300 group-hover:bg-black/40 " />
+            <div className="absolute inset-0 p-2 md:px-5 sm:p- flex flex-col rounded- justify-between text-accent ">
               <div className="text-content text-right">
-                <h1 className="text-sm sm:text-lg md:text-xl xl:text-[47.12px] md:leading-[60px] h-fit md:mt- text-wrap font-bold mb-1">
+                <h1 className="text-sm  sm:text-lg md:text-xl xl:text-[47.12px] md:leading-[60px] h-fit md:mt- text-wrap font-bold mb-1">
                   {project.title}
                 </h1>
                 <p className="text-xs sm:text-base opacity-90  line-clamp-2 md:mb-2">
@@ -488,11 +488,11 @@ function MasonaryGrid({
                 </p>
                 <p className="text-xs sm:text-base">{project.date}</p>
               </div>
-              <div className="categories flex flex-wrap gap-2 mt-auto justify-start">
+              <div className="categories flex  flex-wrap gap-2 mt-auto  justify-start">
                 {project.categories.map((category, catIndex) => (
                   <button
                     key={catIndex}
-                    className="md:px-2 md:py-1 px-1 text-[10px] text-wrap sm:text-sm md:text-base bg-transparent md:text-nowrap border border-accent rounded-md md:rounded-lg hover:bg-[#6a4a2d] transition-all backdrop-blur-sm"
+                    className="px-2 py-1 px text-[8px] text-wrap sm:text-sm md:text-base bg-transparent md:text-nowrap border border-accent rounded-md md:rounded-lg hover:bg-[#6a4a2d] transition-all backdrop-blur-2"
                   >
                     {category}
                   </button>
@@ -502,16 +502,16 @@ function MasonaryGrid({
           </div>
         </div>
         {showMoreButton && index === displayedProjects.length - 1 && (
-          <div className="relative inset-0  flex rounded-bl-none items-end justify-end">
+          <div className="relative   flex  rounded-bl-none items-end justify-end ">
             <div className="btn-header">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   handleSeeMore();
                 }}
-                className="px-8 py- sm:px-6 sm:py-3 bg-accent absolute left-0 bottom-0 flex items- pt-3 md:pt-4 justify-center items-start gap-1 text-black h-auto sm:h-28 w-20 sm:w-36 md:w-36 lg:w-40 xl:w-48 md:rounded-tr-[2rem] rounded-2xl rounded-bl-none transition-all font-semibold"
+                className=" px-8 py- sm:px-6 sm:py-3 bg-accent absolute left-0 bottom-0 flex items- pt-3 md:pt-4 justify-center items-start gap-1 text-black h-auto sm:h-28 w-20 sm:w-36 md:w-36 lg:w-40 xl:w-48 md:rounded-tr-[2rem] rounded-2xl rounded-bl-none transition-all font-semibold"
               >
-                <img src={more} alt="" className="w-8 sm:w-10 z-50" />
+                <img src={more} alt="" className="w-8 sm:w-10 z-40" />
                 <span className="md:text-xl lg:text-2xl text-primary text-sm text-wrap">
                   تصفــــــح المزيــــد
                 </span>
