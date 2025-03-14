@@ -141,7 +141,7 @@ function ProjectDetailPage() {
                         }%)`,
                       }}
                     >
-                      <span className="text-sm md:text-xl font-sans font-light text-gray-700 break-words">
+                      <span className="text-sm md:text-xl font-camel font-light text-gray-700 break-words">
                         {item}
                       </span>
                     </div>

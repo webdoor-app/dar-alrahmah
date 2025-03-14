@@ -58,7 +58,7 @@ export class ProjectMainHeader extends Component {
       <div>
         <section className="font-camel h-fit bg-accent">
           {/* Section Header desktop */}
-          <div className="hidden md:flex pt- md:pt-12 justify-between relative">
+          <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" className="hidden md:flex pt- md:pt-12 justify-between relative">
             {/* Left Side with ServicesHeader1 and h2 */}
             <div className="w-[30%] md: lg:w-fit  mt-4 relative">
               <img

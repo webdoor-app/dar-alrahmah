@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 
-// Import all images
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Import all images and data (replace with your actual imports)
 import urbanPlanningImage from "../assets/img/urban-planning.png";
 import urbanPlanningEffect from "../assets/img/Urben-Ellipse.svg";
 import serviceIcon1 from "../assets/img/ServiceIcon1.svg";
@@ -27,33 +33,20 @@ import line from "../assets/img/Line.svg";
 import horizontalLine from "../assets/img/HorozontalLine.svg";
 import servicesFooter1 from "../assets/img/ServicesFooter1.svg";
 import servicesFooter2 from "../assets/img/ServicesFooter2.svg";
-
 import arrowDownIconLight from "../assets/img/arrowDownIconLight.svg";
 import arrowDownIconDark from "../assets/img/ArrowDownIconDark.svg";
+import { refresh } from "aos";
 
+
+// Tabs data
 const tabs = [
-  {
-    id: "urban-planning",
-    label: "التخطيط الحضري",
-    path: "/fields/UrbanPlanning",
-  },
-  {
-    id: "qualitative-options",
-    label: "الخبرات النوعية",
-    path: "/fields/Qualitives",
-  },
-  {
-    id: "architectural-design",
-    label: "التصميم المعماري",
-    path: "/fields/DevlopmentDesign",
-  },
-  {
-    id: "engineering-management",
-    label: "الإدارة الهندسية",
-    path: "/fields/EngineeringManagement",
-  },
+  { id: "urban-planning", label: "التخطيط الحضري", path: "/fields/UrbanPlanning" },
+  { id: "qualitative-options", label: "الخبرات النوعية", path: "/fields/Qualitives" },
+  { id: "architectural-design", label: "التصميم المعماري", path: "/fields/DevlopmentDesign" },
+  { id: "engineering-management", label: "الإدارة الهندسية", path: "/fields/EngineeringManagement" },
 ];
 
+// Service data
 const serviceData = {
   "urban-planning": {
     title: "التخطيــط الحضري",
@@ -201,29 +194,73 @@ const serviceData = {
   },
 };
 
-function ServicesSection() {
-  const [activeTab, setActiveTab] = useState("urban-planning");
-  const [hoveredSubService, setHoveredSubService] = useState(null);
 
-  // check if the last tab is selected.
+function ServicesSection() {
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const [hoveredSubService, setHoveredSubService] = useState(null);
+  const sectionRef = useRef(null);
+  const tabsRef = useRef([]); // Ref for the list of tabs
+
+  // Check if the last tab is selected
   const isLastTabSelected = activeTab === tabs[tabs.length - 1].id;
 
   // Get the path for the active tab
   const activeTabPath = tabs.find((tab) => tab.id === activeTab)?.path;
 
+
+  // GSAP ScrollTrigger setup
+  useEffect(() => {
+    const section = sectionRef.current;
+    const tabElements = tabsRef.current;
+    const sectionHeight = section.offsetHeight;
+  
+    // Create a single ScrollTrigger instance
+    const scrollTriggerInstance = ScrollTrigger.create({
+      trigger: section,
+      start: "20px 135px", // when the section hits the viewport
+      end: "+=800",
+      pin: true,
+      scrub: true,
+      // markers: true,
+      pinSpacing: "margin",
+      // toggleActions: "play reverse play reverse",
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const tabIndex = Math.floor(progress * tabs.length);
+        if (tabIndex < tabs.length) {
+          setActiveTab(tabs[tabIndex].id);
+        }
+        // Update active classes for tab elements
+        tabElements.forEach((tab, index) => {
+          if (index === tabIndex) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+      }
+    });
+  
+    // Cleanup on component unmount
+    return () => {
+      scrollTriggerInstance.kill();
+    };
+  }, []);
+  
+
   return (
     <section
-      className={`h-fit flex flex-col justify-between font-camel ${
-        isLastTabSelected ? "bg-primaryBurnt" : "bg-accent"
+      ref={sectionRef}
+      className={`h812:h-[165%] h-fit  md:h-[91%] flex flex-col justify-between font-camel   ${
+        isLastTabSelected ? "bg-primaryBurnt " : "bg-accent"
       }`}
     >
       {/* Section Header */}
-      <div className="hidden  md:flex mt-5 md:mt-12 mb- justify-between relative">
+      <div className="hidden md:flex mt-5 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
-        <div className="w-[30%] md: lg:w-fit md:mt-6 relative">
+        <div className="w-[30%] md:lg:w-fit md:mt-6 relative">
           <img src={servicesHeader1} alt="Services Header 1" loading="lazy" />
-          {/* Absolute positioned h2 */}
-          <h1 className="absolute  top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2  text-lg md:text-3xl lg:text-[76.24px] font-bold text-tertiary mb-6">
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2 text-lg md:text-3xl lg:text-[76.24px] font-bold text-tertiary mb-6">
             خدماتنـــا
           </h1>
         </div>
@@ -234,32 +271,24 @@ function ServicesSection() {
         </div>
       </div>
 
-      {/* Section Header  mobile */}
+      {/* Section Header Mobile */}
       <div className="flex md:hidden mt-4 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
-        <div className="w- md: lg:w-fit mt- relative">
-          <img
-            src={servicesMobileHeader1}
-            alt="Services Header 1"
-            loading="lazy"
-          />
-          {/* Absolute positioned h2 */}
-          <h1 className="absolute   top-1/2 right-3 transform -translate-x-1/4 -translate-y-1/2  text-[21px] md:text-3xl lg:text-[76.24px] font-extrabold text-tertiary mb-6">
+        <div className="w-md:lg:w-fit mt-relative">
+          <img src={servicesMobileHeader1} alt="Services Header 1" loading="lazy" />
+          <h1 className="absolute top-1/2 right-3 transform -translate-x-1/4 -translate-y-1/2 text-[21px] md:text-3xl lg:text-[76.24px] font-extrabold text-tertiary mb-6">
             مجالاتنـــا
           </h1>
         </div>
 
         {/* Right Side with ServicesHeader2 */}
         <div className="pt-5">
-          <img
-            src={servicesMobileHeader2}
-            alt="Services Header 2"
-            loading="lazy"
-          />
+          <img src={servicesMobileHeader2} alt="Services Header 2" loading="lazy" />
         </div>
       </div>
 
-      <div className="md:py-8 px-8   md:m-base-m flex md:items-center  flex-col lg:flex-row md:gap-40">
+      {/* Main Content Area */}
+      <div className="py- h-screen md:py-8 px-8 md:m-base-m flex md:items-center flex-col lg:flex-row md:gap-40  ">
         {/* Sidebar Tabs */}
         <aside className="order-1   flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-20 md:pt-0 relative  md:ml-">
           {/* Line (SVG) */}
@@ -308,8 +337,9 @@ function ServicesSection() {
           </ul>
         </aside>
 
+
         {/* Main Image */}
-        <div className="order-2  lg:order-3 w-full lg:w-[50%] grid place-items-center ">
+        <div className="order-2 lg:order-3 w-full h-auto lg:w-[50%] grid place-items-center transition-all ">
           <div className="relative">
             <img
               src={serviceData[activeTab].image}
@@ -327,12 +357,12 @@ function ServicesSection() {
         </div>
 
         {/* Main Content Area */}
-        <div className="order-3 md:order-2 w-full lg:w-[] flex flex-col justify-center items-start pt-14 md:pt-0 md:mt-0 gap-8 md:gap-12   ">
-          <h3 className="md:text-[47.12px] text-2xl   md:mt-0 font-bold text-tertiary">
+        <div className="order-3 md:order-2 w-full   flex flex-col justify-center items-start pt-8 md:pt-0 md:mt-0 gap-4 md:gap-12">
+          <h3 className="md:text-[47.12px] text-2xl md:mt-0  font-bold text-tertiary transition-all ">
             {serviceData[activeTab].title}
           </h3>
           <p
-            className={`text-justify   font-camel font-light my- mb- w-full md:text-base text-sm md:font-semibold ${
+            className={`text-justify font-camel font-light my-mb-w-full md:text-base text-sm md:font-semibold ${
               isLastTabSelected ? "text-accent" : "text-primary"
             }`}
           >
@@ -340,15 +370,15 @@ function ServicesSection() {
           </p>
 
           {/* Sub-services */}
-          <div className="w-full    grid grid-cols-2 auto-rows-fr gap-4 my-1 md:flex md:flex-row md:items-end md:justify-start md:gap-4">
+          <div className="w-full h-fit  grid grid-cols-2 auto-rows-fr gap-4 my-1 md:flex md:flex-row md:items-end md:justify-start md:gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             {serviceData[activeTab].subServices.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setHoveredSubService(index)}
                 onMouseLeave={() => setHoveredSubService(null)}
-                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)]  p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
+                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)] p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
                   isLastTabSelected
-                    ? "bg-gradient-primary border  border-secondary border-opacity-25 text-white"
+                    ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
                     : "bg-white text-primary"
                 }`}
                 style={{
@@ -365,11 +395,7 @@ function ServicesSection() {
                 {activeTabPath && (
                   <Link to={activeTabPath}>
                     <img
-                      src={
-                        isLastTabSelected
-                          ? arrowDownIconDark
-                          : arrowDownIconLight
-                      }
+                      src={isLastTabSelected ? arrowDownIconDark : arrowDownIconLight}
                       alt="Arrow Down"
                       className="absolute top-2 right-2 size-8 md:hidden rotate-"
                       loading="lazy"
@@ -380,17 +406,17 @@ function ServicesSection() {
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className="size-10 md:size-14 "
+                  className="size-10 md:size-14"
                   loading="lazy"
                 />
-                <p className="text-base font-light md:text-lg  md:font-medium whitespace-normal break-words min-w-0 w-full">
+                <p className="text-base font-light md:text-lg md:font-medium whitespace-normal break-words min-w-0 w-full">
                   {service.title}
                 </p>
 
                 {/* Sub-sub-services Dropdown */}
                 {hoveredSubService === index && (
                   <div className="absolute top-full sm:mx-auto md:mx-0 md:-right-4 transform translate-y-2 z-10 min-w-max hidden md:flex">
-                    <div className="mt-2 bg- pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg">
+                    <div className="mt-2 bg-pt-0 p-4 grid grid-cols-2 md:grid-cols-3 gap-2 rounded-lg">
                       {service.subSubServices?.map((subSub, subIndex) => (
                         <div
                           key={subIndex}
@@ -417,9 +443,9 @@ function ServicesSection() {
       </div>
 
       {/* Section Footer */}
-      <div className="flex justify-between mt-12 md:mt-0 mb-5 md:mb-12 ">
+      <div className="flex justify-between mt- md:mt-0 mb-5 md:mb-12">
         {/* Right Side with ServicesFooter2 */}
-        <div className="md:w-1/3  md:  w-24 m-base-m b-20">
+        <div className="md:w-1/3  m-base-m b-20">
           <img
             src={servicesFooter2}
             alt="Services Header 2"
@@ -428,7 +454,7 @@ function ServicesSection() {
           />
         </div>
         {/* Left Side with ServicesFooter1 and h2 */}
-        <div className="w-1/3 md:w- mt-4 md:mt-20   flex justify-end">
+        <div className="w-1/3 md:w-mt-4 md:mt-20 flex justify-end">
           <img src={servicesFooter1} alt="Services Header 1" loading="lazy" />
         </div>
       </div>

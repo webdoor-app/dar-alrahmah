@@ -14,11 +14,17 @@ import loaderGif from "./assets/img/loading1.gif";
 
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
+    // Initialize AOS
+    AOS.init();
+    
     // Hide loader after 3 seconds
     const timer = setTimeout(() => {
       setLoading(false);

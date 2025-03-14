@@ -8,6 +8,10 @@
 
 html {
   scroll-behavior: smooth;
+  
+}
+body {
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -399,8 +403,13 @@ html {
 
 /* .transition-opacity {
   transition: opacity 1s ease-in-out;
-}
+} */
 
-.transition-transform {
+/* .transition-transform {
   transition: transform 1s ease-in-out;
 } */
+
+.pin-spacer{
+  background-color: var(--accent);
+  color: var(--accent);
+}

@@ -59,6 +59,7 @@ export default {
       screens: {
         'max-xs': { max: '395px'},
         'max-md': { max: '767px'},
+        'h812': { raw: '(max-height: 812px)' },
       },
       
       
