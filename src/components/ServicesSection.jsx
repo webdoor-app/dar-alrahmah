@@ -1,7 +1,7 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { Link } from "react-router-dom";
 
 // Register ScrollTrigger plugin
@@ -37,13 +37,28 @@ import arrowDownIconLight from "../assets/img/arrowDownIconLight.svg";
 import arrowDownIconDark from "../assets/img/ArrowDownIconDark.svg";
 import { refresh } from "aos";
 
-
 // Tabs data
 const tabs = [
-  { id: "urban-planning", label: "التخطيط الحضري", path: "/fields/UrbanPlanning" },
-  { id: "qualitative-options", label: "الخبرات النوعية", path: "/fields/Qualitives" },
-  { id: "architectural-design", label: "التصميم المعماري", path: "/fields/DevlopmentDesign" },
-  { id: "engineering-management", label: "الإدارة الهندسية", path: "/fields/EngineeringManagement" },
+  {
+    id: "urban-planning",
+    label: "التخطيط الحضري",
+    path: "/fields/UrbanPlanning",
+  },
+  {
+    id: "qualitative-options",
+    label: "الخبرات النوعية",
+    path: "/fields/Qualitives",
+  },
+  {
+    id: "architectural-design",
+    label: "التصميم المعماري",
+    path: "/fields/DevlopmentDesign",
+  },
+  {
+    id: "engineering-management",
+    label: "الإدارة الهندسية",
+    path: "/fields/EngineeringManagement",
+  },
 ];
 
 // Service data
@@ -194,7 +209,6 @@ const serviceData = {
   },
 };
 
-
 function ServicesSection() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [hoveredSubService, setHoveredSubService] = useState(null);
@@ -207,13 +221,12 @@ function ServicesSection() {
   // Get the path for the active tab
   const activeTabPath = tabs.find((tab) => tab.id === activeTab)?.path;
 
-
   // GSAP ScrollTrigger setup
   useEffect(() => {
     const section = sectionRef.current;
     const tabElements = tabsRef.current;
     const sectionHeight = section.offsetHeight;
-  
+
     // Create a single ScrollTrigger instance
     const scrollTriggerInstance = ScrollTrigger.create({
       trigger: section,
@@ -238,20 +251,19 @@ function ServicesSection() {
             tab.classList.remove("active");
           }
         });
-      }
+      },
     });
-  
+
     // Cleanup on component unmount
     return () => {
       scrollTriggerInstance.kill();
     };
   }, []);
-  
 
   return (
     <section
       ref={sectionRef}
-      className={`h812:h-[165%] h-fit  md:h-[91%] flex flex-col justify-between font-camel   ${
+      className={`h812:h- h-fit md:h-[91%] flex flex-col justify-between font-camel   ${
         isLastTabSelected ? "bg-primaryBurnt " : "bg-accent"
       }`}
     >
@@ -275,7 +287,11 @@ function ServicesSection() {
       <div className="flex md:hidden mt-4 md:mt-12 mb- justify-between relative">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w-md:lg:w-fit mt-relative">
-          <img src={servicesMobileHeader1} alt="Services Header 1" loading="lazy" />
+          <img
+            src={servicesMobileHeader1}
+            alt="Services Header 1"
+            loading="lazy"
+          />
           <h1 className="absolute top-1/2 right-3 transform -translate-x-1/4 -translate-y-1/2 text-[21px] md:text-3xl lg:text-[76.24px] font-extrabold text-tertiary mb-6">
             مجالاتنـــا
           </h1>
@@ -283,12 +299,16 @@ function ServicesSection() {
 
         {/* Right Side with ServicesHeader2 */}
         <div className="pt-5">
-          <img src={servicesMobileHeader2} alt="Services Header 2" loading="lazy" />
+          <img
+            src={servicesMobileHeader2}
+            alt="Services Header 2"
+            loading="lazy"
+          />
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="py- h-screen md:py-8 px-8 md:m-base-m flex md:items-center flex-col lg:flex-row md:gap-40  ">
+      <div className="py- h-screen md:py-8 px-8 md:m-base-m flex md:items-center flex-col gap-1 lg:flex-row md:gap-40  ">
         {/* Sidebar Tabs */}
         <aside className="order-1   flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-20 md:pt-0 relative  md:ml-">
           {/* Line (SVG) */}
@@ -337,7 +357,6 @@ function ServicesSection() {
           </ul>
         </aside>
 
-
         {/* Main Image */}
         <div className="order-2 lg:order-3 w-full h-auto lg:w-[50%] grid place-items-center transition-all ">
           <div className="relative">
@@ -357,7 +376,7 @@ function ServicesSection() {
         </div>
 
         {/* Main Content Area */}
-        <div className="order-3 md:order-2 w-full   flex flex-col justify-center items-start pt-8 md:pt-0 md:mt-0 gap-4 md:gap-12">
+        <div className="order-3 md:order-2 w-full   flex flex-col justify-center items-start pt- md:pt-0 md:mt-0 gap-4 md:gap-12 ">
           <h3 className="md:text-[47.12px] text-2xl md:mt-0  font-bold text-tertiary transition-all ">
             {serviceData[activeTab].title}
           </h3>
@@ -369,14 +388,24 @@ function ServicesSection() {
             {serviceData[activeTab].description}
           </p>
 
+       
           {/* Sub-services */}
-          <div className="w-full h-fit  grid grid-cols-2 auto-rows-fr gap-4 my-1 md:flex md:flex-row md:items-end md:justify-start md:gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+          <div
+            className={`w-full h-fit grid ${
+              serviceData[activeTab].subServices.length <= 2
+                ? "grid-cols-2" // 2 columns for 1 or 2 cards
+                : "grid-cols-3" // 3 columns for 3 or more cards
+            } auto-rows-fr gap-2 my-1 md:flex md:flex-row md:items-end md:justify-start md:gap-4`}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay=""
+          >
             {serviceData[activeTab].subServices.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setHoveredSubService(index)}
                 onMouseLeave={() => setHoveredSubService(null)}
-                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)] p-4 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center gap-2 ${
+                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)] py-2 px-1 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center md:gap-2 ${
                   isLastTabSelected
                     ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
                     : "bg-white text-primary"
@@ -395,9 +424,13 @@ function ServicesSection() {
                 {activeTabPath && (
                   <Link to={activeTabPath}>
                     <img
-                      src={isLastTabSelected ? arrowDownIconDark : arrowDownIconLight}
+                      src={
+                        isLastTabSelected
+                          ? arrowDownIconDark
+                          : arrowDownIconLight
+                      }
                       alt="Arrow Down"
-                      className="absolute top-2 right-2 size-8 md:hidden rotate-"
+                      className="absolute top-2 md:top-2 right-2 size-8 md:hidden rotate-"
                       loading="lazy"
                     />
                   </Link>
@@ -406,10 +439,10 @@ function ServicesSection() {
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className="size-10 md:size-14"
+                  className="w-10 md:size-14 mt-5 md:mt-0"
                   loading="lazy"
                 />
-                <p className="text-base font-light md:text-lg md:font-medium whitespace-normal break-words min-w-0 w-full">
+                <p className="text-sm font-light md:text-lg md:font-medium whitespace-normal break-words min-w-0 w-full">
                   {service.title}
                 </p>
 
