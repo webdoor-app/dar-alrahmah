@@ -7,8 +7,6 @@ import slide2 from "../assets/img/slides/slide2.png";
 import mobileSlide2 from "../assets/img/slides/mobileSlide2.png";
 import slide3 from "../assets/img/slides/slide3.png";
 import mobileSlide3 from "../assets/img/slides/mobileSlide3.png";
-
-// Import arrow icon
 import WhiteArrow from "../assets/img/WhiteArrow.svg";
 
 const cards = [
@@ -34,6 +32,7 @@ function SlideCards() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const touchStartY = useRef(0);
   const touchEndY = useRef(0);
+  const isSwiping = useRef(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,6 +41,20 @@ function SlideCards() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const preventDefault = (e) => {
+      if (isMobile) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("touchmove", preventDefault, { passive: false });
+
+    return () => {
+      document.removeEventListener("touchmove", preventDefault);
+    };
+  }, [isMobile]);
 
   // Common navigation logic
   const goToNext = () => {
@@ -55,15 +68,21 @@ function SlideCards() {
   // Mobile-only touch handlers
   const handleTouchStart = (e) => {
     touchStartY.current = e.touches[0].clientY;
+    isSwiping.current = true;
   };
 
   const handleTouchMove = (e) => {
+    if (!isSwiping.current) return;
     touchEndY.current = e.touches[0].clientY;
+    e.preventDefault(); // Prevent page scroll
   };
 
   const handleTouchEnd = () => {
-    if (touchStartY.current - touchEndY.current > 50) goToNext();
-    else if (touchEndY.current - touchStartY.current > 50) goToPrev();
+    if (isSwiping.current) {
+      if (touchStartY.current - touchEndY.current > 50) goToNext();
+      else if (touchEndY.current - touchStartY.current > 50) goToPrev();
+    }
+    isSwiping.current = false;
   };
 
   const isFirstSlide = activeIndex === 0;
