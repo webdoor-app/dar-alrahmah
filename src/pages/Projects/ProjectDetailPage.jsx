@@ -100,20 +100,20 @@ function ProjectDetailPage() {
           </div>
 
           {/* bottom */}
-          <div className="  md:flex gap-3  items justify-between i px-6 md:px-12 py-8 ">
+          <div className="  md:flex gap-3  items justify-between i px-6 md:px-12 py-4  ">
             {/* contianer 1 */}
-            <div className="  flex items-start justify-center w-1/2 md:w-[30em]  md:order-2   pb-2 md:pb-0 justify-  ">
+            <div className="  flex items-start  justify-right md:justify-center w-1/2 md:w-[]  md:order-2   pb-2 md:pb-0  ">
               {project.partner && (
                 <img
                   src={project.partner}
                   alt="icon"
-                  className="w- h- md:w-32 md:h-"
+                  className="  max-h-[100px]  md:max-h-[260px] md:object-contain"
                 />
               )}
             </div>
 
             {/* container 2 */}
-            <div className=" w-  order-2 pt-3 md:order-1 ">
+            <div className=" w-  order-2 pt-3 md:order-1 md:w-[104%] ">
               <p className="z-10 text-xs leading-4 md:text-base md:leading-7 lg:text-[20px] lg:leading-7 font-light text-justify text-gray-700">
                 {project.fullDescription}
               </p>
