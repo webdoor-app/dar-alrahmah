@@ -104,7 +104,7 @@ function Header() {
                         >
                           <div className="flex justify-start gap-2">
                             <img src={quanitiveIcon} alt="icon" />
-                            <div> الخبرات النوعية</div>
+                            <div> الخبـرة النــوعيــة</div>
                           </div>
                         </NavLink>
                         <NavLink
@@ -122,7 +122,7 @@ function Header() {
                         >
                           <div className="flex justify-start gap-2">
                             <img src={engManagementIcon} alt="icon" />
-                            <div> الادارة الهندسية </div>
+                            <div> الإدارة الهنــدسية </div>
                           </div>
                         </NavLink>
                       </div>
@@ -252,7 +252,7 @@ function Header() {
                               <div className="flex justify-between gap-">
                                 <div className="flex justify-start gap-2">
                                   <img src={quanitiveIcon} alt="icon" />
-                                  <div> الخبـرات النـوعيـــة</div>
+                                  <div> الخبـــرة النـوعيـــة</div>
                                 </div>
                                 <img
                                   src={arrowIconMobileMenu}

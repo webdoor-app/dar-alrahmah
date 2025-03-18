@@ -30,7 +30,7 @@ function UrbenFoundationSection({ tabsToShow }) {
         {
           title: "صناعة وقياس المؤشرات",
           width: "w-[5%]",
-          
+
           textColor: "text-tertiary",
         },
         { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
@@ -69,7 +69,11 @@ function UrbenFoundationSection({ tabsToShow }) {
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "تخطيط الوصول الشامل", width: "w-1/2", textColor: "text-primary" },
+        {
+          title: "تخطيط الوصول الشامل",
+          width: "w-1/2",
+          textColor: "text-primary",
+        },
       ],
       cardsGroup2: [
         {
@@ -97,7 +101,7 @@ function UrbenFoundationSection({ tabsToShow }) {
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
         {
-          title: "صناعة القصة من خلال ربط الأبعاد المختلفة",
+          title: "خلق وجهات سياحية",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -107,14 +111,14 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-tertiary",
         },
         {
-          title: "خلق وجهات سياحية",
+          title: "صناعة القصة من خلال ربط الأبعاد المختلفة",
           width: "w-1/2",
           textColor: "text-primary",
         },
       ],
       cardsGroup2: [
         {
-          title: "وضع المحددات والموجهات",
+          title: "خلق فرص استثمارية",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -124,7 +128,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-primary",
         },
         {
-          title: "خلق فرص استثمارية",
+          title: "وضع المحددات والموجهات",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -138,7 +142,7 @@ function UrbenFoundationSection({ tabsToShow }) {
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
         {
-          title: "إعداد المخططات وتقييمها",
+          title: "وضع المفاهيم وتطبيق المعايير",
           width: "w-1/2",
           textColor: "text-tertiary",
         },
@@ -148,14 +152,14 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-tertiary",
         },
         {
-          title: "وضع المفاهيم وتطبيق المعايير",
+          title: "إعداد المخططات وتقييمها",
           width: "w-1/2",
           textColor: "text-primary",
         },
       ],
       cardsGroup2: [
         {
-          title: "التنسيق بين الجهات المشغلة",
+          title: "تصميم مسارات الحشود",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -165,7 +169,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-primary",
         },
         {
-          title: "تصميم مسارات الحشود",
+          title: "التنسيق بين الجهات المشغلة",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -179,7 +183,7 @@ function UrbenFoundationSection({ tabsToShow }) {
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
         {
-          title: "الإشراف على التشغيل",
+          title: "إعتماد إسكان الحجاج والمعتمرين",
           width: "w-1/2",
           textColor: "text-tertiary",
         },
@@ -189,14 +193,14 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-tertiary",
         },
         {
-          title: "إعتماد إسكان الحجاج والمعتمرين",
+          title: "الإشراف على التشغيل",
           width: "w-1/2",
           textColor: "text-primary",
         },
       ],
       cardsGroup2: [
         {
-          title: "إدارة متطلبات اصحاب المصلحة",
+          title: "ربط الخطط التشغيلية بمفاهيم النسك",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -206,7 +210,7 @@ function UrbenFoundationSection({ tabsToShow }) {
           textColor: "text-primary",
         },
         {
-          title: "ربط الخطط التشغيلية بمفاهيم النسك",
+          title: "إدارة متطلبات اصحاب المصلحة",
           width: "w-full",
           textColor: "text-tertiary",
         },
@@ -455,7 +459,9 @@ function UrbenFoundationSection({ tabsToShow }) {
             {tabContent[activeTab].cardsGroup1.map((card, index) => (
               <div
                 key={index}
-                className={`${card.width === "w-1/2" ? "basis-1/2" : "basis-full"} 
+                className={`${
+                  card.width === "w-1/2" ? "basis-1/2" : "basis-full"
+                } 
                 min-w-0 p-2 md:p-4 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] 
                 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center py-5 md:min-h-[150px] 
                 ${card.textColor}`}
@@ -466,19 +472,21 @@ function UrbenFoundationSection({ tabsToShow }) {
           </div>
 
           {/* Cards Group 2 */}
-         <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
-          {tabContent[activeTab].cardsGroup2.map((card, index) => (
-            <div
-              key={index}
-              className={`${card.width === "w-1/2" ? "basis-1/2" : "basis-full"} 
+          <div className="flex items-stretch justify-center w-full md:mt-4 mt-2 gap-2 md:gap-4">
+            {tabContent[activeTab].cardsGroup2.map((card, index) => (
+              <div
+                key={index}
+                className={`${
+                  card.width === "w-1/2" ? "basis-1/2" : "basis-full"
+                } 
                 min-w-0 p-2 md:p-4 rounded-xl shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] 
                 bg-white font-bold text-xs md:text-xl text-center flex items-center justify-center py-5 md:min-h-[150px] 
                 ${card.textColor}`}
-            >
-              <h1 className="p-2">{card.title}</h1>
-            </div>
-          ))}
-        </div>
+              >
+                <h1 className="p-2">{card.title}</h1>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
