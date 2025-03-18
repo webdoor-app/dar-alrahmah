@@ -217,38 +217,38 @@ function UrbenFoundationSection({ tabsToShow }) {
       ],
     },
     "التصميم العمراني": {
-      id: 6,
-      title: "التصميم العمراني",
-      description:
-        "فهم احتياجات العميل وربطها بمحددات الموقع لتصميم الوظيفة المناسبة للمستخدم النهائي",
-      img: UrbenFoundationSectionImg,
-      cardsGroup1: [
-        {
-          title: "تحليل الوضع الراهن",
-          width: "w-1/2",
-          textColor: "text-tertiary",
-        },
-        {
-          title: "صناعة وقياس المؤشرات",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
-      ],
-      cardsGroup2: [
-        {
-          title: "دراسة توجهات المنطقة",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        { title: "دعم متخذ القرار", width: "w-1/3", textColor: "text-primary" },
-        {
-          title: "إعداد قواعد البيانات",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-      ],
-    },
+        id: 6,
+        title: "التصميم العمراني",
+        description:
+          "فهم احتياجات العميل وربطها بمحددات الموقع لتصميم الوظيفة المناسبة للمستخدم النهائي",
+        img: UrbenFoundationSectionImg,
+        cardsGroup1: [
+          {
+            title: "التصميم الحضري",
+            width: "w-1/2",
+            textColor: "text-tertiary",
+          },
+          {
+            title: "تصميم وإعتماد المخططات",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          { title: "التصميم المعماري", width: "w-1/2", textColor: "text-primary" },
+        ],
+        cardsGroup2: [
+          {
+            title: "دراسة وتحليل المواقع",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          { title: "إعداد الدراسات البيئية", width: "w-1/3", textColor: "text-primary" },
+          {
+            title: "تخصيص استعالات الأراضي",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+        ],
+      },
     "الخدمات المساندة": {
       id: 7,
       title: "الخدمات المساندة",

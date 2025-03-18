@@ -37,7 +37,7 @@ function DevlopmentDesign() {
             <div className="flex justify-between items- w- ">
               <h1 className="text-primary font-extrabold text-[21px] md:text-[76.24px] md:mb-0 my-8  md:mt-40 px-5 md:px-0">
                 {" "}
-                التخطيط الحضري
+                التصميم العمراني
               </h1>
 
               <div className=" mt-6  justify-start items-center md:hidden  ">
