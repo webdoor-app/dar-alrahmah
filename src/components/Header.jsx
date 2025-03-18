@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 // Import all images
@@ -16,6 +16,18 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(dropdownTimeoutRef.current);
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 600); // 600ms delay before closing the dropdown
+  };
 
   return (
     <header className="fixed w-full z-50 bg-opacity-0 border-b border-white/10">
@@ -56,8 +68,8 @@ function Header() {
                   </NavLink>
                 </li>
                 <li
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                   className="relative"
                 >
                   <NavLink
@@ -71,7 +83,11 @@ function Header() {
                     مجالاتنـا
                   </NavLink>
                   {isDropdownOpen && (
-                    <div className="absolute right-0 mt-1 w-52 bg-accent inset-  rounded-l-2xl rounded-b-2xl   shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+                    <div
+                      className="absolute right-0 mt-1 w-52 bg-accent inset- rounded-l-2xl rounded-b-2xl shadow-[0_0_10px_rgba(0,0,0,0.1)]"
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
                       <div className="py-2 px-3 divide-y">
                         <NavLink
                           to="/fields/UrbanPlanning"
