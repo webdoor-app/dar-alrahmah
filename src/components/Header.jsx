@@ -95,7 +95,7 @@ function Header() {
                         >
                           <div className="flex justify-start gap-2">
                             <img src={urbenIcon} alt="icon" />
-                            <div>التخطيط الحضاري</div>
+                            <div>التخطيط الحضري</div>
                           </div>
                         </NavLink>
                         <NavLink

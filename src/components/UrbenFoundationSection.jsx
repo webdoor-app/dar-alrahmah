@@ -53,37 +53,37 @@ function UrbenFoundationSection({ tabsToShow }) {
         },
       ],
     },
-    "تطوير التوجيه الاستراتيجي للمناطق": {
+    "التوجيه الاستراتيجي للمناطق": {
       id: 2,
-      title: "تطوير التوجيه الاستراتيجي للمناطق",
-      description: "صناعة المفاهيم والموجهات التخطيطية.",
+      title: " التوجيه الاستراتيجي للمناطق",
+      description: "صناعة المفاهيم والموجهات التخطيطية",
       img: UrbenFoundationSectionImg,
       cardsGroup1: [
         {
-          title: "تحليل الوضع الراهن",
+          title: "بناء المخطط الهيكلي للمدينة",
           width: "w-1/2",
           textColor: "text-tertiary",
         },
         {
-          title: "صناعة وقياس المؤشرات",
+          title: "وضع الرؤى الاستراتيجية",
           width: "w-full",
           textColor: "text-tertiary",
         },
-        { title: "المسح الاجتماعي", width: "w-1/2", textColor: "text-primary" },
+        { title: "تخطيط الوصول الشامل", width: "w-1/2", textColor: "text-primary" },
       ],
       cardsGroup2: [
         {
-          title: "دراسة توجهات المنطقة",
+          title: "التوافق مع السياق المحلي",
           width: "w-full",
           textColor: "text-tertiary",
         },
         {
-          title: "دعم متخذ القرار",
+          title: "دراسة المقارنات المعيارية وتحليل التجارب العالمية",
           width: "w-full",
           textColor: "text-primary",
         },
         {
-          title: "إعداد قواعد البيانات",
+          title: "تحليل الأثر ووضع المستهدفات",
           width: "w-full",
           textColor: "text-tertiary",
         },

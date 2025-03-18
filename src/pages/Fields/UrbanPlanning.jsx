@@ -61,9 +61,9 @@ function UrbanPlanning() {
 
       <section>
         <UrbenFoundationSection
-          tabsToShow={[
+           tabsToShow={[
+            "التوجيه الاستراتيجي للمناطق",
             "تأسيس المراصد الحضرية",
-            "تطوير التوجيه الاستراتيجي للمناطق",
           ]}
         />
       </section>
