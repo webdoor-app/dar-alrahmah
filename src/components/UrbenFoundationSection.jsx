@@ -249,107 +249,116 @@ function UrbenFoundationSection({ tabsToShow }) {
           },
         ],
       },
-    "الخدمات المساندة": {
-      id: 7,
-      title: "الخدمات المساندة",
-      description: "تقديم الأعمال المكملة لإتمام الإجراءات والعمليات",
-      img: UrbenFoundationSectionImg,
-      cardsGroup1: [
-        {
-          title: "استخراج رخص المنشئات",
-          width: "w-1/2",
-          textColor: "text-tertiary",
-        },
-        {
-          title: "تصميم واعتماد المنشئات وفق معايير الأمن والسلامة",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        {
-          title: "ترخيص السكن الجماعي",
-          width: "w-1/2",
-          textColor: "text-primary",
-        },
-      ],
-      cardsGroup2: [
-        {
-          title: "دعم تقني لتنسيق مشاركة المعلومات",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        { title: "الرفع المساحي", width: "w-1/3", textColor: "text-primary" },
-        {
-          title: "بناء قاعدة نظم المعلومات الجغرافية",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-      ],
-    },
-    "إدارة المشاريع المتعثرة (PMO)": {
-      id: 8,
-      title: "إدارة المشاريع المتعثرة (PMO)",
-      description: "تقييم المقاولات المتعثرة لإيجاد مواطن الخلل وطرق العلاج",
-      img: UrbenFoundationSectionImg,
-      cardsGroup1: [
-        { title: "إدارة التكلفة", width: "w-1/2", textColor: "text-tertiary" },
-        { title: "إدارة التشييد", width: "w-full", textColor: "text-tertiary" },
-        {
-          title: "المراجعة والتقييم",
-          width: "w-1/2",
-          textColor: "text-primary",
-        },
-      ],
-      cardsGroup2: [
-        {
-          title: "  إدارة أصحاب المصلحة",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        { title: "أدارة الموارد", width: "w-1/3", textColor: "text-primary" },
-        {
-          title: "إدارة الجداول الزمنية",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-      ],
-    },
-    "الإشراف على التنفيذ": {
-      id: 9,
-      title: "الإشراف على التنفيذ",
-      description:
-        "الإشراف على إنشاء وتشغيل المشاريع القائمة بما يضمن جودة العمل",
-      img: UrbenFoundationSectionImg,
-      cardsGroup1: [
-        { title: "إدارة المواقع", width: "w-1/2", textColor: "text-tertiary" },
-        {
-          title: "الرصد والتوثيق",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        {
-          title: "المتابعة والتقييم",
-          width: "w-1/2",
-          textColor: "text-primary",
-        },
-      ],
-      cardsGroup2: [
-        {
-          title: "ضمان مستوى جودة العمل",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-        {
-          title: "متابعة الميزانيات والجداول الزمنية",
-          width: "w-1/3",
-          textColor: "text-primary",
-        },
-        {
-          title: "مطابقة المعايير والمواصفات الفنية",
-          width: "w-full",
-          textColor: "text-tertiary",
-        },
-      ],
-    },
+      "الخدمات المساندة": {
+        id: 7,
+        title: "الخدمات المساندة",
+        description: "تقديم الأعمال المكملة لإتمام الإجراءات والعمليات",
+        img: UrbenFoundationSectionImg,
+        cardsGroup1: [
+          {
+            title: "ترخيص السكن الجماعي",
+            width: "w-1/2",
+            textColor: "text-tertiary",
+          },
+          {
+            title: "تصميم واعتماد المنشئات وفق معايير الأمن والسلامة",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          {
+            title: "استخراج رخص المنشئات",
+            width: "w-1/2",
+            textColor: "text-primary",
+          },
+        ],
+        cardsGroup2: [
+          {
+            title: "بناء قاعدة نظم المعلومات الجغرافية",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          { title: "الرفع المساحي", width: "w-1/3", textColor: "text-primary" },
+          {
+            title: "دعم تقني لتنسيق مشاركة المعلومات",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+        ],
+      },
+      "إدارة المشاريع المتعثرة (PMO)": {
+        id: 8,
+        title: "إدارة المشاريع المتعثرة (PMO)",
+        description: "تقييم المقاولات المتعثرة لإيجاد مواطن الخلل وطرق العلاج",
+        img: UrbenFoundationSectionImg,
+        cardsGroup1: [
+          { 
+            title: "المراجعة والتقييم",
+            width: "w-1/2", 
+            textColor: "text-tertiary" },
+            { 
+              title: "إدارة التشييد", 
+              width: "w-full", textColor: "text-tertiary" },
+              {
+            title: "إدارة التكلفة", 
+            width: "w-1/2",
+            textColor: "text-primary",
+          },
+        ],
+        cardsGroup2: [
+          {
+            title: "إدارة الجداول الزمنية",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          { 
+            title: "إدارة الموارد", 
+            width: "w-1/3", textColor: "text-primary" },
+            {
+            title: "  إدارة أصحاب المصلحة",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+        ],
+      },
+      "الإشراف على التنفيذ": {
+        id: 9,
+        title: "الإشراف على التنفيذ",
+        description:
+          "الإشراف على إنشاء وتشغيل المشاريع القائمة بما يضمن جودة العمل",
+        img: UrbenFoundationSectionImg,
+        cardsGroup1: [
+          { 
+            title: "المتابعة والتقييم",
+            width: "w-1/2", textColor: "text-tertiary" },
+            {
+              title: "الرصد والتوثيق",
+              width: "w-full",
+              textColor: "text-tertiary",
+            },
+            {
+            title: "إدارة المواقع", 
+            width: "w-1/2",
+            textColor: "text-primary",
+          },
+        ],
+        cardsGroup2: [
+          {
+            title: "مطابقة المعايير والمواصفات الفنية",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+          {
+            title: "متابعة الميزانيات والجداول الزمنية",
+            width: "w-1/3",
+            textColor: "text-primary",
+          },
+          {
+            title: "ضمان مستوى جودة العمل",
+            width: "w-full",
+            textColor: "text-tertiary",
+          },
+        ],
+      },
   };
 
   return (
