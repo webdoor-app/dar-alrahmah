@@ -36,7 +36,7 @@ function App() {
   if (loading) {
     return (
       // Loader
-      <div className="md:w-full h-screen my-auto flex justify-center items-center bg-[#FCFCFE] ">
+      <div className="md:w-[70%] mx-auto h-screen my-auto flex justify-center items-center bg-[#FCFCFE] ">
         <img
           src={loaderGif}
           alt="Loading..."
