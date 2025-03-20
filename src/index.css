@@ -2,67 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --accent: #FBF9F6;
+:root {
+  --accent: #fbf9f6;
 }
 
 html {
   scroll-behavior: smooth;
-  
 }
 body {
   overflow-x: hidden;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-Regular.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-Regular.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 400; /* Normal */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-Bold.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-Bold.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 700; /* Bold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-ExtraBold.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-ExtraBold.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 800; /* Extra Bold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-Light.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-Light.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 300; /* Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-ExtraLight.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-ExtraLight.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 200; /* Extra Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-Medium.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-Medium.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 500; /* Medium */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'The Year of The Camel';
-  src: url('./assets/fonts/TheYearofTheCamel-Thin.otf') format('opentype'); /* Adjust the path according to your project structure */
+  font-family: "The Year of The Camel";
+  src: url("./assets/fonts/TheYearofTheCamel-Thin.otf") format("opentype"); /* Adjust the path according to your project structure */
   font-weight: 100; /* Thin */
   font-style: normal;
 }
-
 
 /* Costum Gradient */
 
@@ -75,11 +73,15 @@ body {
 }
 
 .border-gradient-gold {
-  border-image-source: linear-gradient(to left, #9A6A38, #223A39); /* Define the gradient */
+  border-image-source: linear-gradient(
+    to left,
+    #9a6a38,
+    #223a39
+  ); /* Define the gradient */
 }
 
-.btn{
-  font-family: 'The Year of The Camel', sans-serif;
+.btn {
+  font-family: "The Year of The Camel", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
@@ -96,7 +98,6 @@ body {
     animation-delay: 4s;
   }
 }
-
 
 /* Drop */
 .dropdown-enter {
@@ -132,8 +133,6 @@ body {
   animation: scroll 20s linear infinite;
   width: max-content;
 }
-
-
 
 /* Slide Cards */
 .slide-container {
@@ -195,19 +194,15 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* .nav-arrow:hover {
-  background-color: ;
-} */
-
-
-
 /* Counter Animaiton */
 .slide-up {
-  animation: slideUp 0.5s ease-in-out forwards, stayVisible 4s ease-in-out 0.5s forwards;
+  animation: slideUp 0.5s ease-in-out forwards,
+    stayVisible 4s ease-in-out 0.5s forwards;
 }
 
 .slide-up-delayed {
-  animation: slideUp 0.5s ease-in-out 0.5s forwards, stayVisible 4s ease-in-out 1s forwards;
+  animation: slideUp 0.5s ease-in-out 0.5s forwards,
+    stayVisible 4s ease-in-out 1s forwards;
 }
 
 .slide-out {
@@ -226,7 +221,8 @@ body {
 }
 
 @keyframes stayVisible {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -243,18 +239,16 @@ body {
   }
 }
 
-
-
 /* Curved containers */
 
-.card-container{
+.card-container {
   position: relative;
   z-index: 1;
 }
 
-.card-header ::before{
+.card-header ::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 50px;
   height: 50px;
   background-color: transparent;
@@ -263,12 +257,10 @@ body {
   border-radius: 50%;
   box-shadow: 25px -25px var(--accent);
   z-index: 1;
-  
-
 }
-.card-header ::after{
+.card-header ::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 50px;
   height: 50px;
   background-color: white;
@@ -277,13 +269,11 @@ body {
   border-radius: 50%;
   box-shadow: 25px -25px var(--accent);
   z-index: 1;
-  
-
 }
 @media (max-width: 768px) {
-  .card-header ::before{
+  .card-header ::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 50px;
     height: 50px;
     background-color: transparent;
@@ -292,12 +282,10 @@ body {
     border-radius: 0.75rem;
     box-shadow: 25px -25px var(--accent);
     z-index: -1;
-    
-  
   }
-  .card-header ::after{
+  .card-header ::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 25px;
     height: 25px;
     background-color: white;
@@ -306,74 +294,54 @@ body {
     border-radius: 0.75rem;
     box-shadow: 14px -13px var(--accent);
     z-index: -1;
-    
-  
   }
 }
 
-
 /* curved More button */
-
-
-.btn-header ::before{
-
-  position: absolute; 
-  content: '';
+.btn-header ::before {
+  position: absolute;
+  content: "";
   width: 50px;
-  height: 50px; 
+  height: 50px;
   background-color: transparent;
   left: 0;
   top: -50px;
-   border-bottom-left-radius: 1.80rem;
+  border-bottom-left-radius: 1.8rem;
   box-shadow: -25px 15px var(--accent);
-  
-  
-
 }
-.btn-header ::after{
-
-  position: absolute; 
-  content: '';
+.btn-header ::after {
+  position: absolute;
+  content: "";
   width: 50px;
-  height: 50px; 
+  height: 50px;
   background-color: transparent;
   right: -49.6px;
   bottom: 0;
-   border-bottom-left-radius: 1.80rem;
-  box-shadow: -25px 25px var(--accent); 
-  
-
+  border-bottom-left-radius: 1.8rem;
+  box-shadow: -25px 25px var(--accent);
 }
 @media (max-width: 768px) {
-
-  .btn-header ::before{
-
-    position: absolute; 
-    content: '';
+  .btn-header ::before {
+    position: absolute;
+    content: "";
     width: 50px;
-    height: 50px; 
+    height: 50px;
     background-color: transparent;
     left: 1px;
     top: -50px;
-     border-bottom-left-radius: 0.80rem;
+    border-bottom-left-radius: 0.8rem;
     box-shadow: -25px 15px var(--accent);
-    
-    
-  
   }
-  .btn-header ::after{
-  
-    position: absolute; 
-    content: '';
+  .btn-header ::after {
+    position: absolute;
+    content: "";
     width: 50px;
-    height: 50px; 
+    height: 50px;
     background-color: transparent;
     right: -49.6px;
     bottom: 1px;
-     border-bottom-left-radius: 0.80rem;
-    box-shadow: -25px 25px var(--accent); 
-    
-  
+    border-bottom-left-radius: 0.8rem;
+    box-shadow: -25px 25px var(--accent);
   }
 }
 
@@ -400,16 +368,57 @@ body {
   }
 }
 
-
-/* .transition-opacity {
-  transition: opacity 1s ease-in-out;
-} */
-
-/* .transition-transform {
-  transition: transform 1s ease-in-out;
-} */
-
-.pin-spacer{
+/* Pin section style */
+.pin-spacer {
   background-color: var(--accent);
   color: var(--accent);
+}
+
+/* custom alert  */
+
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #2b4745, #223a39);
+  color: #fbf9f6;
+  padding: 15px 30px;
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  font-family: "The Year of The Camel", sans-serif !important;
+  font-weight: 800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #cccccc; /* Set border color to gray */
+  background-color: #f5f5f5; /* Set background color to light gray */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.custom-alert.error {
+  background: #B88444;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 767px) {
+  .custom-alert {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
 }
