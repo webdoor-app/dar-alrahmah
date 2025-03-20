@@ -215,6 +215,11 @@ function ServicesSection() {
   const sectionRef = useRef(null);
   const tabsRef = useRef([]); // Ref for the list of tabs
 
+  // Animaiton on Scroll
+  const imageRef = useRef(null);
+  const contentRef = useRef(null);
+  const prevActiveTabRef = useRef(activeTab); 
+
   // Check if the last tab is selected
   const isLastTabSelected = activeTab === tabs[tabs.length - 1].id;
 
@@ -259,16 +264,51 @@ function ServicesSection() {
       scrollTriggerInstance.kill();
     };
   }, []);
+  
+  // GSAP Animation on Tab Change setup
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const prevIndex = tabs.findIndex(tab => tab.id === prevActiveTabRef.current);
+      const currentIndex = tabs.findIndex(tab => tab.id === activeTab);
+      const direction = currentIndex > prevIndex ? 1 : -1;
+  
+      // Animate both image and content
+      gsap.fromTo([imageRef.current, contentRef.current], 
+        { 
+          x: direction * 50, 
+          autoAlpha: 0 
+        }, 
+        { 
+          x: 0, 
+          autoAlpha: 1, 
+          duration: 1.4, 
+          ease: "power2.out" 
+        }
+      );
+
+      // sub-service animation 
+      gsap.from(".sub-service-item", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        delay: 0.2,
+        duration: 0.3
+      });
+    });
+  
+    prevActiveTabRef.current = activeTab;
+    return () => ctx.revert();
+  }, [activeTab]);
 
   return (
     <section
       ref={sectionRef}
-      className={`h812:h- h-fit md:h-[91%] flex flex-col justify-between font-camel   ${
+      className={`h812:h- h-fit md:h-[91%] flex flex-col justify-between font-camel overflow-x-hidden  ${
         isLastTabSelected ? "bg-primaryBurnt " : "bg-accent"
       }`}
     >
       {/* Section Header */}
-      <div className="hidden md:flex mt-5 md:mt-12 mb- justify-between relative">
+      <div className="hidden md:flex mt-5 md:mt-12 mb- justify-between relative ">
         {/* Left Side with ServicesHeader1 and h2 */}
         <div className="w-[30%] md:lg:w-fit md:mt-6 relative">
           <img src={servicesHeader1} alt="Services Header 1" loading="lazy" />
@@ -308,7 +348,7 @@ function ServicesSection() {
       </div>
 
       {/* Main Content Area */}
-      <div className="py- h-screen md:py-8 px-8 md:m-base-m flex md:items-center flex-col gap-1 lg:flex-row md:gap-40  ">
+      <div className="py- h-screen md:py-8 px-8 md:m-base-m flex md:items-center flex-col gap-1 lg:flex-row md:gap-40 overflow-x-clip ">
         {/* Sidebar Tabs */}
         <aside className="order-1   flex justify-center md:justify-normal lg:order-1 w-full lg:w-[20%] pt-20 md:pt-0 relative  md:ml-">
           {/* Line (SVG) */}
@@ -359,7 +399,7 @@ function ServicesSection() {
 
         {/* Main Image */}
         <div className="order-2 lg:order-3 w-full h-auto lg:w-[50%] grid place-items-center transition-all ">
-          <div className="relative">
+          <div className="relative" ref={imageRef}>
             <img
               src={serviceData[activeTab].image}
               alt={serviceData[activeTab].title}
@@ -376,14 +416,17 @@ function ServicesSection() {
         </div>
 
         {/* Main Content Area */}
-        <div className="order-3 md:order-2 w-full   flex flex-col justify-center items-start pt- md:pt-0 md:mt-0 gap-4 md:gap-12 ">
-          <h3 className="md:text-[47.12px] text-2xl md:mt-0  font-bold text-tertiary transition-all ">
+        <div className="order-3 md:order-2 w-full   flex flex-col justify-center items-start pt- md:pt-0 md:mt-0 gap-4 md:gap-12 " ref={contentRef}>
+          <h3 className="md:text-[47.12px] text-2xl md:mt-0  font-bold text-tertiary transition-all " data-aos="fade-up"
+            data-aos-duration="1000">
             {serviceData[activeTab].title}
           </h3>
           <p
             className={`text-justify font-camel font-light my-mb-w-full md:text-base text-sm md:font-semibold ${
               isLastTabSelected ? "text-accent" : "text-primary"
             }`}
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             {serviceData[activeTab].description}
           </p>
@@ -405,7 +448,7 @@ function ServicesSection() {
                 key={index}
                 onMouseEnter={() => setHoveredSubService(index)}
                 onMouseLeave={() => setHoveredSubService(null)}
-                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)] py-2 px-1 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center md:gap-2 ${
+                className={`relative group shadow-[0_0_20px_2px_rgba(0,0,0,0.1)] py-2 px-1 md:p-6 border w-full md:w-1/3 lg:w-fit rounded-3xl flex flex-col justify-center hover:cursor-pointer text-center items-center md:gap-2 sub-service-item ${
                   isLastTabSelected
                     ? "bg-gradient-primary border border-secondary border-opacity-25 text-white"
                     : "bg-white text-primary"
